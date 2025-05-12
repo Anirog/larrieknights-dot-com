@@ -43,16 +43,17 @@
         </div>
 
         <div class="pagination-container">
-            {% if current_page > 1 %}
+
+            <!-- Previous arrow (always shown) -->
             <a href="{{ 'browse.html' if current_page - 1 == 1 else 'browse-' ~ (current_page - 1) ~ '.html' }}"
-                class="pagination-arrow">
+                class="pagination-arrow {% if current_page == 1 %}disabled{% endif %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8" viewBox="0 0 256 256">
                     <path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z">
                     </path>
                 </svg>
             </a>
-            {% endif %}
 
+            <!-- Page numbers -->
             {% for page in range(1, total_pages + 1) %}
             <a href="{{ 'browse.html' if page == 1 else 'browse-' ~ page ~ '.html' }}"
                 class="pagination-link {% if page == current_page %}active{% endif %}">
@@ -60,15 +61,18 @@
             </a>
             {% endfor %}
 
-            {% if current_page < total_pages %} <a href="browse-{{ current_page + 1 }}.html" class="pagination-arrow">
+            <!-- Next arrow (always shown) -->
+            <a href="browse-{{ current_page + 1 }}.html"
+                class="pagination-arrow {% if current_page == total_pages %}disabled{% endif %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8" viewBox="0 0 256 256">
                     <path
                         d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z">
                     </path>
                 </svg>
-                </a>
-                {% endif %}
+            </a>
+
         </div>
+
 
         <div class="footer-container">
             <div class="footer-text">

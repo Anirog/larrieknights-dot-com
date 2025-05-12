@@ -322,6 +322,11 @@ img {
   /* Change the fill color on hover */
 }
 
+.pagination-arrow.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
 /* Media Queries Start */
 
 /* Tablet 768px and up  */
