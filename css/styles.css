@@ -108,19 +108,25 @@ a {
 
 .browse-image-grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 160px); /* Two columns, each 160px wide */
-  grid-template-rows: repeat(3, 160px); /* Three rows, each 160px high */
-  gap: 22px; /* Gap between images */
-  justify-content: center; /* Center the grid horizontally */
+  grid-template-columns: repeat(2, 160px);
+  /* Two columns, each 160px wide */
+  grid-template-rows: repeat(3, 160px);
+  /* Three rows, each 160px high */
+  gap: 22px;
+  /* Gap between images */
+  justify-content: center;
+  /* Center the grid horizontally */
   margin-left: 16px;
   margin-right: 16px;
   margin-bottom: 18px;
 }
 
 .browse-image-grid-container img {
-  width: 100%; /* Make images fill their grid cells */
+  width: 100%;
+  /* Make images fill their grid cells */
   height: 100%;
-  object-fit: cover; /* Maintain aspect ratio and cover the entire cell */
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the entire cell */
 }
 
 /* Hide extra thumbnails on mobile */
@@ -136,8 +142,23 @@ img {
 .next-previous-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin: 0 16px 18px 16px;
+}
+
+.next-previous-container:not(.only-next) {
+  justify-content: space-between;
+}
+
+.next-previous-container.only-next {
+  justify-content: flex-end;
+}
+
+.next-previous-container:not(.only-next) {
+  justify-content: space-between;
+}
+
+.next-previous-container.only-next {
+  justify-content: flex-end;
 }
 
 .previous-arrow {
@@ -255,10 +276,14 @@ img {
 
 .pagination-container {
   display: flex;
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  gap: 20px; /* Spacing between items */
-  margin-top: 20px; /* Add some space above the pagination */
+  justify-content: center;
+  /* Center items horizontally */
+  align-items: center;
+  /* Center items vertically */
+  gap: 20px;
+  /* Spacing between items */
+  margin-top: 20px;
+  /* Add some space above the pagination */
   margin-bottom: 28px;
 }
 
@@ -267,26 +292,34 @@ img {
   font-size: 16px;
   font-weight: 400;
   color: #8AB4F8;
-  text-decoration: none; /* Remove underlines from links */
-  display: flex; /* Use flexbox to center content */
-  align-items: center; /* Vertically center content */
-  justify-content: center; /* Horizontally center content */
+  text-decoration: none;
+  /* Remove underlines from links */
+  display: flex;
+  /* Use flexbox to center content */
+  align-items: center;
+  /* Vertically center content */
+  justify-content: center;
+  /* Horizontally center content */
 }
 
 .pagination-link.active {
-  color: #ffffff; /* Active link color */
+  color: #ffffff;
+  /* Active link color */
 }
 
 .pagination-link:hover {
-  color: #cccccc; /* Active link color */
+  color: #cccccc;
+  /* Active link color */
 }
 
 .pagination-arrow svg {
-  transition: fill 150ms ease-in-out; /* Add a transition for a smooth effect */
+  transition: fill 150ms ease-in-out;
+  /* Add a transition for a smooth effect */
 }
 
 .pagination-arrow:hover svg {
-  fill: #cccccc; /* Change the fill color on hover */
+  fill: #cccccc;
+  /* Change the fill color on hover */
 }
 
 /* Media Queries Start */
@@ -358,9 +391,12 @@ img {
   }
 
   .browse-image-grid-container {
-    grid-template-columns: repeat(4, 164px); /* Four columns, each 164px wide */
-    grid-template-rows: repeat(4, 164px); /* Four rows, each 164px high */
-    gap: 16px; /* Gap between images */
+    grid-template-columns: repeat(4, 164px);
+    /* Four columns, each 164px wide */
+    grid-template-rows: repeat(4, 164px);
+    /* Four rows, each 164px high */
+    gap: 16px;
+    /* Gap between images */
   }
 
   /* Show all thumbnails on tablet */
@@ -388,9 +424,12 @@ img {
   }
 
   .browse-image-grid-container {
-    grid-template-columns: repeat(4, 256px); /* Four columns, each 256px wide */
-    grid-template-rows: repeat(4, 256px); /* Four rows, each 256px high */
-    gap: 24px; /* Gap between images */
+    grid-template-columns: repeat(4, 256px);
+    /* Four columns, each 256px wide */
+    grid-template-rows: repeat(4, 256px);
+    /* Four rows, each 256px high */
+    gap: 24px;
+    /* Gap between images */
   }
 }
 
