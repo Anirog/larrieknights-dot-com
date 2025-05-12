@@ -56,7 +56,8 @@ def save_photos(photo_list):
 
 def render_templates(photos):
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
-    latest = photos[-1]
+    index_tpl = env.get_template('index.html')
+    browse_tpl = env.get_template('browse.html')
 
     # Clear and recreate dist folder
     if os.path.exists(DIST_DIR):
@@ -65,20 +66,9 @@ def render_templates(photos):
     os.makedirs(os.path.join(DIST_DIR, 'images'))
     os.makedirs(os.path.join(DIST_DIR, 'thumbnails'))
 
-    # Render templates
-    index_tpl = env.get_template('index.html')
-    browse_tpl = env.get_template('browse.html')
-
-    with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
-        f.write(index_tpl.render(photo=latest))
-
-    with open(os.path.join(DIST_DIR, 'browse.html'), 'w') as f:
-        f.write(browse_tpl.render(photos=reversed(photos)))
-
-    # Copy CSS
+    # Copy static files
     os.system('cp css/styles.css dist/css/styles.css')
 
-    # Copy profile image
     profile_src = os.path.join(IMAGE_DIR, 'larrie-knights.jpg')
     profile_dest = os.path.join(DIST_DIR, 'images', 'larrie-knights.jpg')
     if os.path.exists(profile_src):
@@ -86,19 +76,42 @@ def render_templates(photos):
     else:
         print("⚠️  Profile image 'larrie-knights.jpg' not found in images/")
 
-    # Copy all uploaded images
     for photo in photos:
         img_src = os.path.join(IMAGE_DIR, photo['filename'])
         img_dest = os.path.join(DIST_DIR, 'images', photo['filename'])
         if os.path.exists(img_src):
             os.system(f'cp "{img_src}" "{img_dest}"')
 
-    # Copy all thumbnails
-    for photo in photos:
         thumb_src = os.path.join(THUMB_DIR, photo['filename'])
         thumb_dest = os.path.join(DIST_DIR, 'thumbnails', photo['filename'])
         if os.path.exists(thumb_src):
             os.system(f'cp "{thumb_src}" "{thumb_dest}"')
+
+    # Generate individual pages for each photo
+    for i, photo in enumerate(photos):
+        previous_photo = photos[i - 1] if i > 0 else None
+        next_photo = photos[i + 1] if i < len(photos) - 1 else None
+        output_file = os.path.join(DIST_DIR, photo['filename'].replace('.jpg', '.html'))
+
+        with open(output_file, 'w') as f:
+            f.write(index_tpl.render(
+                photo=photo,
+                previous_photo=previous_photo,
+                next_photo=next_photo
+            ))
+
+    # Generate the index.html page using the latest photo
+    latest = photos[-1]
+    with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
+        f.write(index_tpl.render(
+            photo=latest,
+            previous_photo=photos[-2] if len(photos) >= 2 else None,
+            next_photo=None
+        ))
+
+    # Generate browse.html
+    with open(os.path.join(DIST_DIR, 'browse.html'), 'w') as f:
+        f.write(browse_tpl.render(photos=reversed(photos)))
 
 def main():
     image_path = input("Enter the full path to your image: ").strip()
