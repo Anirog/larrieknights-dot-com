@@ -1,5 +1,6 @@
 import os
 import json
+import shutil
 from datetime import datetime
 from PIL import Image
 import piexif
@@ -57,21 +58,42 @@ def render_templates(photos):
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
     latest = photos[-1]
 
+    # Clear and recreate the dist folder
+    if os.path.exists(DIST_DIR):
+        shutil.rmtree(DIST_DIR)
+    os.makedirs(os.path.join(DIST_DIR, 'css'))
+    os.makedirs(os.path.join(DIST_DIR, 'images'))
+    os.makedirs(os.path.join(DIST_DIR, 'thumbnails'))
+
+    # Render index.html
     index_tpl = env.get_template('index.html')
     index_output = index_tpl.render(photo=latest)
     with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
         f.write(index_output)
 
+    # Render browse.html
     browse_tpl = env.get_template('browse.html')
     browse_output = browse_tpl.render(photos=reversed(photos))
     with open(os.path.join(DIST_DIR, 'browse.html'), 'w') as f:
         f.write(browse_output)
 
-    os.makedirs(os.path.join(DIST_DIR, 'css'), exist_ok=True)
+    # Copy CSS
     os.system('cp css/styles.css dist/css/styles.css')
 
-    os.makedirs(os.path.join(DIST_DIR, 'images'), exist_ok=True)
-    os.system('cp images/larrie-knights.jpg dist/images/larrie-knights.jpg')
+    # Copy all user images to dist/images/
+    for photo in photos:
+        src_path = os.path.join(IMAGE_DIR, photo['filename'])
+        dest_path = os.path.join(DIST_DIR, 'images', photo['filename'])
+        if os.path.exists(src_path):
+            os.system(f'cp "{src_path}" "{dest_path}"')
+
+    # Copy all thumbnails to dist/thumbnails/
+    os.makedirs(os.path.join(DIST_DIR, 'thumbnails'), exist_ok=True)
+    for photo in photos:
+        thumb_src = os.path.join(THUMB_DIR, photo['filename'])
+        thumb_dest = os.path.join(DIST_DIR, 'thumbnails', photo['filename'])
+        if os.path.exists(thumb_src):
+            os.system(f'cp "{thumb_src}" "{thumb_dest}"')
 
 def main():
     image_path = input("Enter the full path to your image: ").strip()
@@ -106,20 +128,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# Copy all user images to dist/images/
-photos = load_photos()
-for photo in photos:
-    src_path = os.path.join(IMAGE_DIR, photo['filename'])
-    dest_path = os.path.join(DIST_DIR, 'images', photo['filename'])
-    if os.path.exists(src_path):
-        os.system(f'cp "{src_path}" "{dest_path}"')
-# Copy all thumbnails to dist/thumbnails/
-os.makedirs(os.path.join(DIST_DIR, 'thumbnails'), exist_ok=True)
-photos = load_photos()
-for photo in photos:
-    thumb_src = os.path.join(THUMB_DIR, photo['filename'])
-    thumb_dest = os.path.join(DIST_DIR, 'thumbnails', photo['filename'])
-    if os.path.exists(thumb_src):
-        os.system(f'cp "{thumb_src}" "{thumb_dest}"')
-        os.system(f'cp "{thumb_src}" "{thumb_dest}"')
