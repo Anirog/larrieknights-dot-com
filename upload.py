@@ -58,37 +58,42 @@ def render_templates(photos):
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
     latest = photos[-1]
 
-    # Clear and recreate the dist folder
+    # Clear and recreate dist folder
     if os.path.exists(DIST_DIR):
         shutil.rmtree(DIST_DIR)
     os.makedirs(os.path.join(DIST_DIR, 'css'))
     os.makedirs(os.path.join(DIST_DIR, 'images'))
     os.makedirs(os.path.join(DIST_DIR, 'thumbnails'))
 
-    # Render index.html
+    # Render templates
     index_tpl = env.get_template('index.html')
-    index_output = index_tpl.render(photo=latest)
-    with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
-        f.write(index_output)
-
-    # Render browse.html
     browse_tpl = env.get_template('browse.html')
-    browse_output = browse_tpl.render(photos=reversed(photos))
+
+    with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
+        f.write(index_tpl.render(photo=latest))
+
     with open(os.path.join(DIST_DIR, 'browse.html'), 'w') as f:
-        f.write(browse_output)
+        f.write(browse_tpl.render(photos=reversed(photos)))
 
     # Copy CSS
     os.system('cp css/styles.css dist/css/styles.css')
 
-    # Copy all user images to dist/images/
-    for photo in photos:
-        src_path = os.path.join(IMAGE_DIR, photo['filename'])
-        dest_path = os.path.join(DIST_DIR, 'images', photo['filename'])
-        if os.path.exists(src_path):
-            os.system(f'cp "{src_path}" "{dest_path}"')
+    # Copy profile image
+    profile_src = os.path.join(IMAGE_DIR, 'larrie-knights.jpg')
+    profile_dest = os.path.join(DIST_DIR, 'images', 'larrie-knights.jpg')
+    if os.path.exists(profile_src):
+        os.system(f'cp "{profile_src}" "{profile_dest}"')
+    else:
+        print("⚠️  Profile image 'larrie-knights.jpg' not found in images/")
 
-    # Copy all thumbnails to dist/thumbnails/
-    os.makedirs(os.path.join(DIST_DIR, 'thumbnails'), exist_ok=True)
+    # Copy all uploaded images
+    for photo in photos:
+        img_src = os.path.join(IMAGE_DIR, photo['filename'])
+        img_dest = os.path.join(DIST_DIR, 'images', photo['filename'])
+        if os.path.exists(img_src):
+            os.system(f'cp "{img_src}" "{img_dest}"')
+
+    # Copy all thumbnails
     for photo in photos:
         thumb_src = os.path.join(THUMB_DIR, photo['filename'])
         thumb_dest = os.path.join(DIST_DIR, 'thumbnails', photo['filename'])
