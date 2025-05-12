@@ -11,6 +11,7 @@ THUMB_DIR = 'thumbnails'
 DIST_DIR = 'dist'
 TEMPLATE_DIR = 'templates'
 PHOTO_DATA_FILE = 'photos.json'
+PHOTOS_PER_PAGE = 16
 
 os.makedirs(IMAGE_DIR, exist_ok=True)
 os.makedirs(THUMB_DIR, exist_ok=True)
@@ -59,22 +60,18 @@ def render_templates(photos):
     index_tpl = env.get_template('index.html')
     browse_tpl = env.get_template('browse.html')
 
-    # Clear and recreate dist folder
     if os.path.exists(DIST_DIR):
         shutil.rmtree(DIST_DIR)
     os.makedirs(os.path.join(DIST_DIR, 'css'))
     os.makedirs(os.path.join(DIST_DIR, 'images'))
     os.makedirs(os.path.join(DIST_DIR, 'thumbnails'))
 
-    # Copy static files
     os.system('cp css/styles.css dist/css/styles.css')
 
     profile_src = os.path.join(IMAGE_DIR, 'larrie-knights.jpg')
     profile_dest = os.path.join(DIST_DIR, 'images', 'larrie-knights.jpg')
     if os.path.exists(profile_src):
         os.system(f'cp "{profile_src}" "{profile_dest}"')
-    else:
-        print("⚠️  Profile image 'larrie-knights.jpg' not found in images/")
 
     for photo in photos:
         img_src = os.path.join(IMAGE_DIR, photo['filename'])
@@ -87,12 +84,18 @@ def render_templates(photos):
         if os.path.exists(thumb_src):
             os.system(f'cp "{thumb_src}" "{thumb_dest}"')
 
-    # Generate individual pages for each photo
+    latest = photos[-1]
+    with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
+        f.write(index_tpl.render(
+            photo=latest,
+            previous_photo=photos[-2] if len(photos) > 1 else None,
+            next_photo=None
+        ))
+
     for i, photo in enumerate(photos):
         previous_photo = photos[i - 1] if i > 0 else None
         next_photo = photos[i + 1] if i < len(photos) - 1 else None
         output_file = os.path.join(DIST_DIR, photo['filename'].replace('.jpg', '.html'))
-
         with open(output_file, 'w') as f:
             f.write(index_tpl.render(
                 photo=photo,
@@ -100,18 +103,18 @@ def render_templates(photos):
                 next_photo=next_photo
             ))
 
-    # Generate the index.html page using the latest photo
-    latest = photos[-1]
-    with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
-        f.write(index_tpl.render(
-            photo=latest,
-            previous_photo=photos[-2] if len(photos) >= 2 else None,
-            next_photo=None
-        ))
-
-    # Generate browse.html
-    with open(os.path.join(DIST_DIR, 'browse.html'), 'w') as f:
-        f.write(browse_tpl.render(photos=reversed(photos)))
+    total_pages = (len(photos) + PHOTOS_PER_PAGE - 1) // PHOTOS_PER_PAGE
+    for page in range(total_pages):
+        start = page * PHOTOS_PER_PAGE
+        end = start + PHOTOS_PER_PAGE
+        page_photos = list(reversed(photos))[start:end]
+        page_file = "browse.html" if page == 0 else f"browse-{page+1}.html"
+        with open(os.path.join(DIST_DIR, page_file), 'w') as f:
+            f.write(browse_tpl.render(
+                photos=page_photos,
+                current_page=page + 1,
+                total_pages=total_pages
+            ))
 
 def main():
     image_path = input("Enter the full path to your image: ").strip()

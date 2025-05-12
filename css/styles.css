@@ -130,7 +130,7 @@ a {
 }
 
 /* Hide extra thumbnails on mobile */
-.browse-image-grid-container img:nth-child(n+7) {
+.browse-image-grid-container a:nth-child(n+7) {
   display: none;
 }
 
@@ -400,7 +400,7 @@ img {
   }
 
   /* Show all thumbnails on tablet */
-  .browse-image-grid-container img:nth-child(n+7) {
+  .browse-image-grid-container a:nth-child(n+7) {
     display: block;
   }
 }
