@@ -42,9 +42,12 @@
 
         <div class="browse-image-grid-container">
             {% for photo in photos %}
-            <img src="thumbnails/{{ photo.filename }}" alt="{{ photo.title }}">
+            <a href="{{ photo.filename | replace('.jpg', '.html') }}">
+                <img src="thumbnails/{{ photo.filename }}" alt="{{ photo.title }}">
+            </a>
             {% endfor %}
         </div>
+
 
 
         <div class="pagination-container">
