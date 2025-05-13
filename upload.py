@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 
 IMAGE_DIR = 'images'
 THUMB_DIR = 'thumbnails'
-DIST_DIR = 'dist'
+DIST_DIR = 'docs'
 TEMPLATE_DIR = 'templates'
 PHOTO_DATA_FILE = 'photos.json'
 PHOTOS_PER_PAGE = 16
