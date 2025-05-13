@@ -60,11 +60,22 @@ def render_templates(photos):
     index_tpl = env.get_template('index.html')
     browse_tpl = env.get_template('browse.html')
 
+    # Backup CNAME if it exists
+    cname_path = os.path.join(DIST_DIR, 'CNAME')
+    if os.path.exists(cname_path):
+        shutil.copy(cname_path, 'CNAME.bak')
+
+    # Now clear the output directory
     if os.path.exists(DIST_DIR):
         shutil.rmtree(DIST_DIR)
+
     os.makedirs(os.path.join(DIST_DIR, 'css'))
     os.makedirs(os.path.join(DIST_DIR, 'images'))
     os.makedirs(os.path.join(DIST_DIR, 'thumbnails'))
+
+    # Restore CNAME if it was backed up
+    if os.path.exists('CNAME.bak'):
+        shutil.move('CNAME.bak', os.path.join(DIST_DIR, 'CNAME'))
 
     os.system(f'cp css/styles.css {DIST_DIR}/css/styles.css')
 
