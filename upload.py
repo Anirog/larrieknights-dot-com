@@ -66,7 +66,7 @@ def render_templates(photos):
     os.makedirs(os.path.join(DIST_DIR, 'images'))
     os.makedirs(os.path.join(DIST_DIR, 'thumbnails'))
 
-    os.system('cp css/styles.css dist/css/styles.css')
+    os.system(f'cp css/styles.css {DIST_DIR}/css/styles.css')
 
     profile_src = os.path.join(IMAGE_DIR, 'larrie-knights.jpg')
     profile_dest = os.path.join(DIST_DIR, 'images', 'larrie-knights.jpg')
@@ -145,7 +145,7 @@ def main():
     })
     save_photos(photos)
     render_templates(photos)
-    print("✅ Image posted and site built to /dist!")
+    print("✅ Image posted and site built to /docs!")
 
 if __name__ == '__main__':
     main()
