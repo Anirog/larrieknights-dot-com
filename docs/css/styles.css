@@ -468,9 +468,18 @@ img {
     display: none;
   }
 
+  .nav-toggle-label {
+    display: none;
+  }
+
   .nav-links {
     display: flex;
     align-items: center;
+    gap: 32px;
+    position: static;
+    height: auto;
+    background: none;
+    padding: 0;
   }
 
   .nav-links a {
