@@ -580,8 +580,9 @@ img {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
+
 .modal.open {
   display: block;
 }
@@ -598,10 +599,13 @@ img {
   border-radius: 10px;
   font-family: 'Space Grotesk', sans-serif;
   color: #fff;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.24);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.24);
 }
+
 @media (min-width: 700px) {
-  .modal-content { max-width: 700px; }
+  .modal-content {
+    max-width: 700px;
+  }
 }
 
 /* The Close Button */
@@ -614,6 +618,7 @@ img {
   transition: color 0.2s;
   cursor: pointer;
 }
+
 .close:hover,
 .close:focus {
   color: #cccccc;
@@ -651,9 +656,11 @@ input[type="submit"] {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 input[type="submit"]:hover {
   background-color: #3080b3;
 }
+
 .safetext {
   font-size: 16px;
   font-family: 'Space Grotesk', sans-serif;
@@ -662,3 +669,34 @@ input[type="submit"]:hover {
 }
 
 /* Modal Content/Box End */
+
+/* toast notification Start */
+
+.toast {
+  visibility: hidden;
+  min-width: 220px;
+  max-width: 90vw;
+  background-color: #282a2e;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 20px;
+  position: fixed;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1200;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s, top 0.5s;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.20);
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  top: 60px;
+}
+
+/* toast notification End */
