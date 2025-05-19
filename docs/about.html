@@ -2,86 +2,90 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photoblog</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoblog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="header-container">
-      <div class="profile-image-container">
-        <a href="index.html"><img class="profile-image" src="images/larrie-knights.jpg" alt="Larrie Knights"></a>
-      </div>
+    <div class="container">
+        <div class="header-container">
+            <div class="profile-image-container">
+                <a href="index.html"><img class="profile-image" src="images/larrie-knights.jpg"
+                        alt="Larrie Knights"></a>
+            </div>
 
-      <div class="menu-container">
+            <div class="menu-container">
 
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span class="hamburger"></span>
-        </label>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="browse.html">Browse</a>
-          <a href="#" id="contact-link">Contact</a>
-          <a href="about.html">About</a>
-        </nav>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span class="hamburger"></span>
+                </label>
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="browse.html">Browse</a>
+                    <a href="#" id="contact-link">Contact</a>
+                    <a href="about.html">About</a>
+                </nav>
 
-      </div>
+            </div>
 
+        </div>
+
+
+        <!-- Main About Content -->
+        <div class="about-content">
+            <div class="about-title">About</div>
+            <div class="about-text">
+                Hi, I'm Larrie. Hay fever sufferer and geek, I like making websites, playing guitar, reading, and
+                coffee.
+                <br><br>
+                This photoblog is a personal project—I'll be sharing photos as often as I can.
+                <br><br>
+                Thanks for stopping by!
+            </div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-text">
+                © <a class="footer-link-text" href="">Larrie Knights</a>
+                <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                </script> <span class="phone">(phone)</span><span class="tablet">(tablet)</span><span
+                    class="desktop">(desktop)</span>
+            </div>
+        </div>
     </div>
 
+    <!-- Contact Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="https://formsubmit.co/93e780d7debce1f7d01007f517f8cc73" method="POST">
+                <label for="yourname">Your Name</label>
+                <input type="text" id="yourname" name="yourname" required placeholder="Your Name" />
 
-    <!-- Main About Content -->
-    <div class="about-content">
-      <div class="about-title">About</div>
-      <div class="about-text">
-        Hi, I’m Larrie. Hay fever sufferer and geek, I like making websites, playing guitar, reading, and coffee.
-        <br><br>
-        This photoblog is a personal project—one photo a day, every day.<br><br>
-        Thanks for stopping by!
-      </div>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="youremail@mail.com" />
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required placeholder="Your message"
+                    style="height: 200px"></textarea>
+
+                <p class="safetext">&#x1F512; Your email is safe I NEVER share it with anyone</p>
+
+                <input type="submit" value="Submit" />
+
+                <input type="hidden" name="_next" value="https://photo.larrieknights.com/thanks.html" />
+
+            </form>
+        </div>
     </div>
-
-    <div class="footer-container">
-      <div class="footer-text">
-        © <a class="footer-link-text" href="">Larrie Knights</a>
-        <script type="text/javascript">
-          document.write(new Date().getFullYear());
-        </script> <span class="phone">(phone)</span><span class="tablet">(tablet)</span><span
-          class="desktop">(desktop)</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form action="https://formsubmit.co/93e780d7debce1f7d01007f517f8cc73" method="POST">
-        <label for="yourname">Your Name</label>
-        <input type="text" id="yourname" name="yourname" required placeholder="Your Name" />
-
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required placeholder="youremail@mail.com" />
-
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" required placeholder="Your message" style="height: 200px"></textarea>
-
-        <p class="safetext">&#x1F512; Your email is safe I NEVER share it with anyone</p>
-
-        <input type="submit" value="Submit" />
-
-        <input type="hidden" name="_next" value="https://photo.larrieknights.com/thanks.html" />
-
-      </form>
-    </div>
-  </div>
 
 </body>
 <script src="js/modal.js"></script>
