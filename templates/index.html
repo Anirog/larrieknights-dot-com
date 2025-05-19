@@ -28,7 +28,7 @@
         <nav class="nav-links">
           <a href="index.html">Home</a>
           <a href="browse.html">Browse</a>
-          <a href="#">Contact</a>
+          <a href="#" id="contact-link">Contact</a>
           <a href="#">About</a>
         </nav>
 
@@ -112,6 +112,30 @@
       </div>
     </div>
   </div>
+
+  <!-- Contact Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form action="https://formsubmit.co/93e780d7debce1f7d01007f517f8cc73" method="POST">
+        <label for="yourname">Your Name</label>
+        <input type="text" id="yourname" name="yourname" required placeholder="Your Name" />
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="youremail@mail.com" />
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required placeholder="Your message" style="height: 200px"></textarea>
+
+        <p class="safetext">&#x1F512; Your email is safe I NEVER share it with anyone</p>
+
+        <input type="submit" value="Submit" />
+        <input type="hidden" name="_next" value="https://larrieknights.com/thanks.html" />
+      </form>
+    </div>
+  </div>
+
 </body>
+<script src="js/modal.js"></script>
 
 </html>

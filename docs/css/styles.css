@@ -569,3 +569,96 @@ img {
 }
 
 /* Media Queries End */
+
+/* Modal (Background Overlay) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.4);
+}
+.modal.open {
+  display: block;
+}
+
+/* Modal Content/Box Start */
+
+.modal-content {
+  background-color: #202124;
+  margin: 5% auto;
+  padding: 20px 24px;
+  border: 1px solid #303134;
+  width: 95%;
+  max-width: 420px;
+  border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.24);
+}
+@media (min-width: 700px) {
+  .modal-content { max-width: 700px; }
+}
+
+/* The Close Button */
+.close {
+  color: #8AB4F8;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: -11px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+/* Form Fields */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #18191a;
+  color: #fff;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  background-color: #3897d3;
+  color: white;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+input[type="submit"]:hover {
+  background-color: #3080b3;
+}
+.safetext {
+  font-size: 16px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #8AB4F8;
+  margin-bottom: 12px;
+}
+
+/* Modal Content/Box End */

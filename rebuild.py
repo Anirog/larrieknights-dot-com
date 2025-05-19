@@ -24,6 +24,7 @@ def main():
                 else:
                     os.remove(item_path)
 
+    # Recreate necessary asset folders
     os.makedirs(os.path.join(DIST_DIR, 'css'), exist_ok=True)
     os.makedirs(os.path.join(DIST_DIR, 'images'), exist_ok=True)
     os.makedirs(os.path.join(DIST_DIR, 'thumbnails'), exist_ok=True)
@@ -38,6 +39,18 @@ def main():
         return
 
     render_templates(photos)
+
+    # Copy JS folder to docs/ after rendering templates
+    try:
+        if os.path.exists('js'):
+            shutil.copytree('js', os.path.join(DIST_DIR, 'js'), dirs_exist_ok=True)
+            print("✅ JS folder copied to docs/")
+            print("Contents of docs/js/:", os.listdir(os.path.join(DIST_DIR, 'js')))
+        else:
+            print("❌ No js folder found in project root!")
+    except Exception as e:
+        print(f"Error copying js folder: {e}")
+
     print("✅ Site rebuilt successfully using existing photos.json")
 
 if __name__ == '__main__':
