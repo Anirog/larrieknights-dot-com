@@ -24,7 +24,7 @@ def get_exif_data(filepath):
         model = exif_dict['0th'].get(piexif.ImageIFD.Model, b'').decode(errors='ignore')
         exposure_time = exif_dict['Exif'].get(piexif.ExifIFD.ExposureTime, (1, 1))
         aperture = exif_dict['Exif'].get(piexif.ExifIFD.FNumber, (4, 1))
-        iso = exif_dict['Exif'].get(piexif.ExifIFD.ISOSpeedRatings, 100)
+        iso = exif_dict['ExifIFD'].get(piexif.ExifIFD.ISOSpeedRatings, 100)
 
         camera = f"{make} {model}".strip()
         shutter = f"{exposure_time[0]}/{exposure_time[1]}s"
@@ -163,6 +163,17 @@ def main():
     })
     save_photos(photos)
     render_templates(photos)
+
+    # Copy JS folder to docs/ after rendering templates
+    try:
+        if os.path.exists('js'):
+            shutil.copytree('js', os.path.join(DIST_DIR, 'js'), dirs_exist_ok=True)
+            print("✅ JS folder copied to docs/")
+        else:
+            print("❌ No js folder found in project root!")
+    except Exception as e:
+        print(f"Error copying js folder: {e}")
+
     print("✅ Image posted and site built to /docs!")
 
 if __name__ == '__main__':
