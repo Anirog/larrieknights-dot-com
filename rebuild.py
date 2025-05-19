@@ -39,6 +39,7 @@ def main():
         return
 
     render_templates(photos)
+    shutil.copy('templates/thanks.html', os.path.join(DIST_DIR, 'thanks.html'))
 
     # Copy JS folder to docs/ after rendering templates
     try:
