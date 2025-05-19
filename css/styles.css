@@ -669,34 +669,3 @@ input[type="submit"]:hover {
 }
 
 /* Modal Content/Box End */
-
-/* toast notification Start */
-
-.toast {
-  visibility: hidden;
-  min-width: 220px;
-  max-width: 90vw;
-  background-color: #282a2e;
-  color: #fff;
-  text-align: center;
-  border-radius: 8px;
-  padding: 12px 20px;
-  position: fixed;
-  top: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1200;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
-  opacity: 0;
-  transition: opacity 0.5s, top 0.5s;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.20);
-}
-
-.toast.show {
-  visibility: visible;
-  opacity: 1;
-  top: 60px;
-}
-
-/* toast notification End */
