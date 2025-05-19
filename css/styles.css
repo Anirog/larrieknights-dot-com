@@ -706,9 +706,15 @@ input[type="submit"]:hover {
 
 @media (max-width: 600px) {
   .about-content {
-    margin: 38px 16px 38px 16px;
-    padding: 18px 6vw;
+    margin: 38px 16px;
+    /* 38px top/bottom, 16px left/right */
+    padding: 18px;
+    /* 18px padding all around */
     font-size: 1.01rem;
+    max-width: 100%;
+    /* Allow it to fill the screen */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
   }
 
   .about-title {
