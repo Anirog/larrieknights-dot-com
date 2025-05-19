@@ -164,6 +164,7 @@ def main():
     save_photos(photos)
     render_templates(photos)
     shutil.copy('templates/thanks.html', os.path.join(DIST_DIR, 'thanks.html'))
+    shutil.copy('templates/about.html', os.path.join(DIST_DIR, 'about.html'))
 
     # Copy JS folder to docs/ after rendering templates
     try:

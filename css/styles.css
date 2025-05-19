@@ -669,3 +669,50 @@ input[type="submit"]:hover {
 }
 
 /* Modal Content/Box End */
+
+/* About Page Styling Start */
+
+.about-content {
+  margin: 38px 0 38px 0;
+  padding: 38px 16px;
+  border-radius: 16px;
+  background: #282a2e;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.13);
+  text-align: center;
+  font-size: 1.16rem;
+  letter-spacing: 0.01em;
+}
+
+.about-title {
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.about-text {
+  color: #dadada;
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+}
+
+/* About Page Styling End */
+
+/* About Page Media Queries Start */
+
+@media (max-width: 600px) {
+  .about-content {
+    padding: 18px 6vw;
+    font-size: 1.01rem;
+  }
+
+  .about-title {
+    font-size: 1.45rem;
+  }
+}
+
+/* About Page Media Queries End */
