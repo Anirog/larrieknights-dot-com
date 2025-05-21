@@ -62,7 +62,7 @@
   {% if previous_photo is none and next_photo %} only-next{% endif %}
 ">
       {% if previous_photo %}
-      <a href="{{ previous_photo.filename | replace('.jpg', '.html') }}">
+      <a href="{{ previous_photo.filename | replace('.jpg', '.html') }}" id="previous-link">
         <div class="previous-container">
           <div class="previous-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#ffffff" viewBox="0 0 256 256">
@@ -75,7 +75,7 @@
       {% endif %}
 
       {% if next_photo %}
-      <a href="{{ next_photo.filename | replace('.jpg', '.html') }}">
+      <a href="{{ next_photo.filename | replace('.jpg', '.html') }}" id="next-link">
         <div class="next-container">
           <div class="next-day-text">Next day</div>
           <div class="next-arrow">
@@ -151,6 +151,7 @@
 
   <script src="js/scroll-toast.js"></script>
   <script src="js/modal.js"></script>
+  <script src="js/keyboard.js"></script>
 
 </body>
 
