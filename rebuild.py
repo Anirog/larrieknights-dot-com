@@ -62,3 +62,6 @@ import shutil
 
 # Copy favicon.ico into docs/
 shutil.copyfile("site_files/favicon.ico", "docs/favicon.ico")
+
+# Copy social-preview.jpg into docs/
+shutil.copyfile("site_files/social-preview.jpg", "docs/social-preview.jpg")
