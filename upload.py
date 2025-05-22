@@ -6,6 +6,16 @@ from PIL import Image
 import piexif
 from jinja2 import Environment, FileSystemLoader
 
+# Check for required files in site_files/
+required_files = ["favicon.ico", "social-preview.jpg"]
+missing_files = [f for f in required_files if not os.path.exists(os.path.join("site_files", f))]
+
+if missing_files:
+    print("⚠️  Warning: The following files are missing from site_files/:")
+    for f in missing_files:
+        print(f"   - {f}")
+    print("Make sure they’re in place before rebuilding the site.\n")
+
 IMAGE_DIR = 'images'
 THUMB_DIR = 'thumbnails'
 DIST_DIR = 'docs'
