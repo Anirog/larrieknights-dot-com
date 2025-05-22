@@ -57,3 +57,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+import shutil
+
+# Copy favicon.ico into docs/
+shutil.copyfile("site_files/favicon.ico", "docs/favicon.ico")
