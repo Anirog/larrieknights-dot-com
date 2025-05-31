@@ -76,15 +76,19 @@ def render_templates(photos):
     if os.path.exists(cname_path):
         shutil.copy(cname_path, cname_temp)
 
-    # Clear everything inside DIST_DIR except CNAME
+    # Clear everything inside DIST_DIR except CNAME and blog
     if os.path.exists(DIST_DIR):
         for item in os.listdir(DIST_DIR):
+            if item in ('CNAME', 'blog'):
+                print(f"⏭️  Skipping: {item}")
+                continue
             item_path = os.path.join(DIST_DIR, item)
-            if os.path.basename(item_path) != 'CNAME':
-                if os.path.isdir(item_path):
-                    shutil.rmtree(item_path)
-                else:
-                    os.remove(item_path)
+            if os.path.isdir(item_path):
+                print(f"🧹 Removing folder: {item_path}")
+                shutil.rmtree(item_path)
+            else:
+                print(f"🧹 Removing file: {item_path}")
+                os.remove(item_path)
 
     os.makedirs(os.path.join(DIST_DIR, 'css'), exist_ok=True)
     os.makedirs(os.path.join(DIST_DIR, 'images'), exist_ok=True)
