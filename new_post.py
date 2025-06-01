@@ -5,11 +5,13 @@ import re
 # Prompt user for inputs
 title = input("Post title: ").strip()
 tags = input("Tags (comma separated): ").strip()
-
-image_input = input("Image path [images/placeholder.jpg]: ").strip()
-image = image_input.lstrip("/") if image_input else "images/placeholder.jpg"
-
+image_input = input("Image path [https://ik.imagekit.io/your-default.jpg]: ").strip()
+image = image_input if image_input else "https://ik.imagekit.io/your-default.jpg"
 image_alt = input("Image alt text: ").strip()
+
+# Validate image URL
+if not image.startswith("http"):
+    print("⚠️  Warning: This image path is not a URL. Consider uploading your image to ImageKit or another host.")
 
 # Generate date and slug
 today = date.today().isoformat()

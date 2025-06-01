@@ -51,13 +51,18 @@ for filename in os.listdir(POSTS_DIR):
 
         slug = metadata["slug"]
 
+        # Warn if image path is not a URL
+        image_path = metadata.get("image", "")
+        if image_path and not image_path.startswith("http"):
+            print(f"⚠️  Warning: Post '{metadata.get('title', 'Untitled')}' has a non-URL image path: {image_path}")
+
         # Build post object
         post = {
             "title": metadata["title"],
             "date": formatted_date,
             "slug": slug,
             "tags": metadata.get("tags", []),
-            "image": metadata.get("image", ""),
+            "image": image_path,
             "image_alt": metadata.get("image_alt", ""),
             "body": html_body,
             "excerpt": excerpt,
@@ -74,6 +79,12 @@ all_posts.sort(key=lambda x: datetime.datetime.strptime(x["date"], "%d %B %Y"), 
 for i, post in enumerate(all_posts):
     post["prev_url"] = all_posts[i - 1]["filename"] if i > 0 else None
     post["next_url"] = all_posts[i + 1]["filename"] if i < len(all_posts) - 1 else None
+
+# Clear out old blog post HTML files
+if os.path.exists(OUTPUT_POSTS_DIR):
+    for f in os.listdir(OUTPUT_POSTS_DIR):
+        if f.endswith(".html"):
+            os.remove(os.path.join(OUTPUT_POSTS_DIR, f))
 
 # Ensure output directory exists
 os.makedirs(OUTPUT_POSTS_DIR, exist_ok=True)
