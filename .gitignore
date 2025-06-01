@@ -13,9 +13,3 @@ __pycache__/
 
 # Flask-specific ignores
 instance/
-
-# Image cleanup
-/images/*
-!/images/larrie-knights.jpg
-/thumbnails/
-/blog/images/
