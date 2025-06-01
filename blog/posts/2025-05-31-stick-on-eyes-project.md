@@ -3,7 +3,7 @@ title: Stick on Eyes Project
 date: 2025-05-31
 slug: 2025-05-31-stick-on-eyes-project
 tags: [photography]
-image: /images/2025-05-13-111751.jpg
+image: images/2025-05-13-111751.jpg
 image_alt: Shell With Stick on Eyes
 ---
 
