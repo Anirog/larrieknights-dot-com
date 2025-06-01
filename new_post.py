@@ -5,7 +5,10 @@ import re
 # Prompt user for inputs
 title = input("Post title: ").strip()
 tags = input("Tags (comma separated): ").strip()
-image = input("Image path [/images/placeholder.jpg]: ").strip() or "/images/placeholder.jpg"
+
+image_input = input("Image path [images/placeholder.jpg]: ").strip()
+image = image_input.lstrip("/") if image_input else "images/placeholder.jpg"
+
 image_alt = input("Image alt text: ").strip()
 
 # Generate date and slug
