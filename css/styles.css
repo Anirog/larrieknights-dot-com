@@ -17,6 +17,14 @@
   color: #cccccc;
 }
 
+.post-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #e8eaed; /* match your site's light text */
+  padding-bottom: 0.3rem;
+}
+
 .post-nav .disabled {
   opacity: 0;
   pointer-events: none;
