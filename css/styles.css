@@ -6,6 +6,17 @@
 
 /* Blog Post Styles Start */
 
+.post-content a {
+  color: #8ab4f8;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+.post-content a:hover {
+  text-decoration: none;
+  color: #cccccc;
+}
+
 .post-nav .disabled {
   opacity: 0;
   pointer-events: none;
