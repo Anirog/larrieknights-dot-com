@@ -19,9 +19,11 @@ if missing_files:
 IMAGE_DIR = 'images'
 THUMB_DIR = 'thumbnails'
 DIST_DIR = 'docs'
+DIST_THUMB_DIR = os.path.join(DIST_DIR, 'thumbnails')
+os.makedirs(DIST_THUMB_DIR, exist_ok=True)
 TEMPLATE_DIR = 'templates'
 PHOTO_DATA_FILE = 'photos.json'
-PHOTOS_PER_PAGE = 16
+PHOTOS_PER_PAGE = 6
 
 os.makedirs(IMAGE_DIR, exist_ok=True)
 os.makedirs(THUMB_DIR, exist_ok=True)
@@ -76,19 +78,19 @@ def render_templates(photos):
     if os.path.exists(cname_path):
         shutil.copy(cname_path, cname_temp)
 
-    # Clear everything inside DIST_DIR except CNAME and blog
+    # Clear everything inside DIST_DIR except CNAME, blog, images, and thumbnails
     if os.path.exists(DIST_DIR):
         for item in os.listdir(DIST_DIR):
-            if item in ('CNAME', 'blog'):
+            if item in ('CNAME', 'blog', 'images', 'thumbnails'):
                 print(f"⏭️  Skipping: {item}")
                 continue
-            item_path = os.path.join(DIST_DIR, item)
-            if os.path.isdir(item_path):
-                print(f"🧹 Removing folder: {item_path}")
-                shutil.rmtree(item_path)
-            else:
-                print(f"🧹 Removing file: {item_path}")
-                os.remove(item_path)
+        item_path = os.path.join(DIST_DIR, item)
+        if os.path.isdir(item_path):
+            print(f"🧹 Removing folder: {item_path}")
+            shutil.rmtree(item_path)
+        else:
+            print(f"🧹 Removing file: {item_path}")
+            os.remove(item_path)
 
     os.makedirs(os.path.join(DIST_DIR, 'css'), exist_ok=True)
     os.makedirs(os.path.join(DIST_DIR, 'images'), exist_ok=True)
@@ -116,13 +118,17 @@ def render_templates(photos):
         if os.path.exists(thumb_src):
             os.system(f'cp "{thumb_src}" "{thumb_dest}"')
 
-    latest = photos[-1]
-    with open(os.path.join(DIST_DIR, 'index.html'), 'w') as f:
+    # Generate index.html
+    latest_photo = photos[0] if photos else None
+    previous_photo = photos[1] if len(photos) > 1 else None
+    next_photo = None  # No next photo for the latest one
+
+    with open(os.path.join(DIST_DIR, "index.html"), "w") as f:
         f.write(index_tpl.render(
-            photo=latest,
-            previous_photo=photos[-2] if len(photos) > 1 else None,
-            next_photo=None
-        ))
+            photo=latest_photo,
+            previous_photo=previous_photo,
+            next_photo=next_photo
+    ))
 
     for i, photo in enumerate(photos):
         previous_photo = photos[i - 1] if i > 0 else None
@@ -202,3 +208,13 @@ shutil.copyfile("site_files/favicon.ico", "docs/favicon.ico")
 
 # Copy social-preview.jpg into docs/
 shutil.copyfile("site_files/social-preview.jpg", "docs/social-preview.jpg")
+
+thumb_src = os.path.join("thumbnails")
+thumb_dest = os.path.join("docs", "thumbnails")
+os.makedirs(thumb_dest, exist_ok=True)
+
+for filename in os.listdir(THUMB_DIR):
+    src_thumb_path = os.path.join(THUMB_DIR, filename)
+    dst_thumb_path = os.path.join(thumb_dest, filename)
+    shutil.copy(src_thumb_path, dst_thumb_path)
+    print(f"📁 Copied thumbnail: {filename}")
