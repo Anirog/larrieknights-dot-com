@@ -182,6 +182,10 @@ def main():
         "iso": iso
     })
     save_photos(photos)
+    
+    # Sort so newest photo is first
+    photos.sort(key=lambda x: x['filename'], reverse=True)
+    
     render_templates(photos)
     shutil.copy('templates/thanks.html', os.path.join(DIST_DIR, 'thanks.html'))
     shutil.copy('templates/about.html', os.path.join(DIST_DIR, 'about.html'))

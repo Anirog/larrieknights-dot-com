@@ -22,7 +22,7 @@ with open("photos.json") as f:
     photos = json.load(f)
 
 # Sort photos by date
-photos.sort(key=lambda x: x["date"], reverse=True)
+photos.sort(key=lambda x: x['filename'], reverse=True)
 
 # Ensure output folders exist
 os.makedirs(DIST_DIR, exist_ok=True)
