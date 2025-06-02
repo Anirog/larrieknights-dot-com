@@ -53,4 +53,26 @@ for page in range(total_pages):
             )
         )
 
+# Load the index template
+index_template = env.get_template("index.html")
+
+# Render index.html using the latest photo and (optional) previous
+if photos:
+    latest = photos[0]
+    previous = photos[1] if len(photos) > 1 else None
+
+    output_path = os.path.join(DIST_DIR, "index.html")
+    with open(output_path, "w") as f:
+        f.write(
+            index_template.render(
+                photo=latest,
+                previous_photo=previous,
+                next_photo=None
+            )
+        )
+
+    print("✅ index.html generated.")
+else:
+    print("⚠️ No photos found. index.html not generated.")
+
 print("✅ Site rebuilt successfully using existing photos.json")
