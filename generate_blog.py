@@ -106,3 +106,21 @@ import shutil
 shutil.copy("templates/about-blog.html", "docs/blog/about.html")
 
 print("✅ Blog generated successfully.")
+
+# Existing logic...
+print("✅ Blog post generated!")
+
+# Copy favicon
+import shutil
+import os
+
+favicon_src = "site_files/favicon.ico"
+blog_dir = os.path.join("docs", "blog")
+posts_dir = os.path.join(blog_dir, "posts")
+
+for target_dir in [blog_dir, posts_dir]:
+    if os.path.exists(favicon_src):
+        shutil.copy(favicon_src, os.path.join(target_dir, "favicon.ico"))
+        print(f"✅ favicon.ico copied to {target_dir}")
+    else:
+        print("❌ favicon.ico not found in site_files/")
