@@ -135,6 +135,8 @@ figure img {
   overflow: hidden;
 }
 
+
+
 /* Remove bottom margin from the last card */
 .blog-card:last-child {
   margin-bottom: 0;
@@ -148,6 +150,18 @@ figure img {
   border-top-right-radius: 12px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.blog-card p a,
+.blog-card .post-excerpt a {
+  color: #8ab4f8;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+.blog-card p a:hover,
+.blog-card .post-excerpt a:hover {
+  color: #cccccc;
 }
 
 .card-img {
