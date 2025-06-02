@@ -21,7 +21,7 @@ browse_template = env.get_template("browse.html")
 with open("photos.json") as f:
     photos = json.load(f)
 
-# Sort photos by date
+# Sort so newest photo is first
 photos.sort(key=lambda x: x['filename'], reverse=True)
 
 # Ensure output folders exist
