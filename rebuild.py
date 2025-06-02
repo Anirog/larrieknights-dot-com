@@ -10,7 +10,7 @@ THUMB_DIR = "thumbnails"
 DIST_DIR = "docs"
 TEMPLATE_DIR = "templates"
 THUMB_SIZE = (800, 800)
-PAGE_SIZE = 16
+PAGE_SIZE = 6
 
 # Jinja2 setup
 env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
