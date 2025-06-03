@@ -131,8 +131,8 @@ def render_templates(photos):
     ))
 
     for i, photo in enumerate(photos):
-        previous_photo = photos[i - 1] if i > 0 else None
-        next_photo = photos[i + 1] if i < len(photos) - 1 else None
+        next_photo = photos[i - 1] if i > 0 else None
+        previous_photo = photos[i + 1] if i < len(photos) - 1 else None
         output_file = os.path.join(DIST_DIR, photo['filename'].replace('.jpg', '.html'))
         with open(output_file, 'w') as f:
             f.write(index_tpl.render(
