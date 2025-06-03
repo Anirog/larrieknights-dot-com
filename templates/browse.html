@@ -58,7 +58,7 @@
         </div>
 
         <div class="browse-image-grid-container">
-            {% for photo in photos | reverse %}
+            {% for photo in photos %}
             <a href="{{ photo.filename | replace('.jpg', '.html') }}">
                 <img src="thumbnails/{{ photo.filename }}" alt="{{ photo.title }}" />
             </a>
