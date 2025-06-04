@@ -124,3 +124,13 @@ for target_dir in [blog_dir, posts_dir]:
         print(f"✅ favicon.ico copied to {target_dir}")
     else:
         print("❌ favicon.ico not found in site_files/")
+
+# Copy updated styles.css
+css_src = "css/styles.css"
+css_dest = "docs/css/styles.css"
+
+if os.path.exists(css_src):
+    shutil.copy(css_src, css_dest)
+    print("✅ styles.css copied to docs/css/")
+else:
+    print("❌ styles.css not found in css/")
