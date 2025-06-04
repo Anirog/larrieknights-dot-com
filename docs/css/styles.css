@@ -920,17 +920,18 @@ textarea {
 input[type="submit"] {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
-  background-color: #3897d3;
-  color: white;
+  background-color: #8AB4F8;
+  color: #1a1c1e;
   padding: 12px 40px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 input[type="submit"]:hover {
-  background-color: #3080b3;
+  color: #1769c9;
+  background-color: #ffffff;
 }
 
 .safetext {
