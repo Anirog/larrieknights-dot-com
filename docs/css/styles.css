@@ -920,8 +920,8 @@ textarea {
 input[type="submit"] {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
-  background-color: #8AB4F8;
-  color: #1a1c1e;
+  background-color: #3897d3;
+  color: white;
   padding: 12px 40px;
   border: none;
   border-radius: 6px;
@@ -930,8 +930,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  color: #1769c9;
-  background-color: #ffffff;
+  background-color: #3080b3;
 }
 
 .safetext {
