@@ -101,6 +101,24 @@ output_index_html = index_template.render(posts=all_posts)
 with open(OUTPUT_INDEX_FILE, "w") as f:
     f.write(output_index_html)
 
+from collections import defaultdict
+
+# Group posts by tag
+tag_map = defaultdict(list)
+for post in all_posts:
+    for tag in post['tags']:
+        tag_map[tag].append(post)
+
+# Load the tag page template
+tag_template = env.get_template("blog-tag.html")
+
+# Generate a tag page for each tag
+for tag, posts in tag_map.items():
+    tag_slug = tag.lower().replace(" ", "-")
+    tag_output_path = os.path.join("docs", "blog", f"tag-{tag_slug}.html")
+    with open(tag_output_path, "w") as f:
+        f.write(tag_template.render(tag=tag, posts=posts))
+
 # Copy the blog-specific About page
 import shutil
 shutil.copy("templates/about-blog.html", "docs/blog/about.html")
