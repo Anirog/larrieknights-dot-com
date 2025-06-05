@@ -41,7 +41,7 @@
 
 .back-link {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #8ab4f8;
   text-decoration: none;
   display: inline-block;
@@ -115,7 +115,7 @@ figure img {
 
 .post-nav a {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #8ab4f8;
   text-decoration: none;
 }
@@ -226,7 +226,7 @@ figure img {
 .blog-readmore {
   display: inline-block;
   margin-top: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: #8AB4F8;
   text-decoration: none;
