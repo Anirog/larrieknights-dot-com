@@ -56,3 +56,7 @@ for page in range(total_pages):
             current_page=page + 1,
             total_pages=total_pages,
         ))
+ # Generate about.html
+about_template = env.get_template("about.html")
+with open(os.path.join(DIST_DIR, "about.html"), "w") as f:
+    f.write(about_template.render())   
