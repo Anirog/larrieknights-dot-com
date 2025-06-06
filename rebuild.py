@@ -59,4 +59,12 @@ for page in range(total_pages):
  # Generate about.html
 about_template = env.get_template("about.html")
 with open(os.path.join(DIST_DIR, "about.html"), "w") as f:
-    f.write(about_template.render())   
+    f.write(about_template.render())
+
+import shutil
+
+# Ensure the target CSS directory exists
+os.makedirs(os.path.join(DIST_DIR, "css"), exist_ok=True)
+
+# Copy the styles.css file into docs/css/
+shutil.copyfile("css/styles.css", os.path.join(DIST_DIR, "css", "styles.css"))   

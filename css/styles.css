@@ -736,6 +736,10 @@ img {
   animation-delay: 400ms;
 }
 
+.nav-toggle:checked~.nav-links a:nth-child(5) {
+  animation-delay: 500ms;
+}
+
 /* Menu Animation End */
 
 /* Media Queries Start */
