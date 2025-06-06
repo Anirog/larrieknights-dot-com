@@ -720,6 +720,8 @@ img {
   animation: fadeSlideIn 300ms ease forwards;
 }
 
+/* Add To This Line if Add New Links Start */
+
 .nav-toggle:checked~.nav-links a:nth-child(1) {
   animation-delay: 100ms;
 }
@@ -739,6 +741,8 @@ img {
 .nav-toggle:checked~.nav-links a:nth-child(5) {
   animation-delay: 500ms;
 }
+
+/* Add To This Line if add new links End */
 
 /* Menu Animation End */
 
