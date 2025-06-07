@@ -1,5 +1,6 @@
 import os
 import json
+import shutil
 from jinja2 import Environment, FileSystemLoader
 
 # Paths
@@ -60,8 +61,6 @@ for page in range(total_pages):
 about_template = env.get_template("about.html")
 with open(os.path.join(DIST_DIR, "about.html"), "w") as f:
     f.write(about_template.render())
-
-import shutil
 
 # Ensure the target CSS directory exists
 os.makedirs(os.path.join(DIST_DIR, "css"), exist_ok=True)
