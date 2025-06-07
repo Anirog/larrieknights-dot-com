@@ -2,7 +2,7 @@
 # Photoblog Project Summary
 
 ## Current Status
-- Project is live at `https://photo.larrieknights.com`
+- Project is live at `https://larrieknights.com`
 - MVP complete and tagged as `v1.0` on GitHub
 - All core features are working:
   - Daily photo pages with metadata
