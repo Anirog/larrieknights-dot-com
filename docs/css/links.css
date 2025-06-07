@@ -1,0 +1,103 @@
+:root {
+  --bg-color: #202124;
+  --font-color: #FFFFFF;
+  --link-color: #8AB4F8;
+  --link-hover-color: #bdbdbd;
+  --modal-bg-color: #494949;
+  --success-color: #8DFF95;
+  --btn-border-color: #D6D6D6;
+  --btn-hover-color: #3b3b3b;
+  --btn-text-color: #FFFFFF;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  min-height: 100vh;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0 20px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.logo {
+  border-radius: 50%;
+  margin-top: 21px;
+}
+
+/* 500px or larger */
+@media (min-width: 31.25em) {
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.about {
+  line-height: 1.5;
+  max-width: 400px;
+  text-align: center;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.btn {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto 15px;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--btn-text-color);
+  border: 1px solid var(--font-color);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover-color);
+  color: var(--btn-text-hover-color);
+}
+
+h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.footer {
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.footer a {
+    border-bottom: none;
+    color: var(--font-color);
+    font-weight: 300;
+}
+
+.footer a:hover {
+    color: var(--link-hover-color);
+}
