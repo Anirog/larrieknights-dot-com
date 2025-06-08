@@ -1,0 +1,63 @@
+[
+  {
+    "category": "Max",
+    "title": "Full-width featured card",
+    "image": "https://placehold.co/1200x800?text=span-12",
+    "widthClass": "span-12",
+    "featured": true
+  },
+  {
+    "category": "Tiny",
+    "title": "Just a sliver",
+    "image": "https://placehold.co/1200x800?text=span-1",
+    "widthClass": "span-1",
+    "featured": true
+  },
+  {
+    "category": "Default",
+    "title": "No widthClass set",
+    "image": "https://placehold.co/1200x800?text=default",
+    "featured": true
+  },
+  {
+    "category": "Odd Order",
+    "title": "Appears early, wide card",
+    "image": "https://placehold.co/1200x800?text=span-10",
+    "widthClass": "span-10",
+    "featured": true
+  },
+  {
+    "category": "Fill",
+    "title": "Tiny filler",
+    "image": "https://placehold.co/1200x800?text=span-2",
+    "widthClass": "span-2",
+    "featured": true
+  },
+  {
+    "category": "Skip",
+    "title": "Should be ignored",
+    "image": "https://placehold.co/1200x800?text=not-featured",
+    "widthClass": "span-6",
+    "featured": false
+  },
+  {
+    "category": "Missing Info",
+    "title": "No image provided",
+    "widthClass": "span-3",
+    "featured": true
+  },
+  {
+    "category": "Overflow",
+    "title": "Will overflow row if not handled",
+    "image": "https://placehold.co/1200x800?text=span-6",
+    "widthClass": "span-6",
+    "featured": true
+  },
+  {
+    "category": "Overflow",
+    "title": "Another wide card",
+    "image": "https://placehold.co/1200x800?text=span-7",
+    "widthClass": "span-7",
+    "featured": true
+  }
+]

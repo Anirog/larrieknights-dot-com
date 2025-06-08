@@ -1,0 +1,24 @@
+.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 16px; // a bit more modern and consistent with your overall style
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); // helps content stand out
+  transition: all 0.3s ease;
+  background-image: none; // overridden if inline background-image exists
+}
+
+.card--filler {
+  visibility: hidden;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
