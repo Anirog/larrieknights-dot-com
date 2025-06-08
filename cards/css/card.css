@@ -1,0 +1,57 @@
+body {
+  background: #f0efec;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  max-width: 360px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-body {
+  padding: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.card-date,
+.card-meta,
+.card-tags {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 8px 0;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.card-quote {
+  font-style: italic;
+  color: #222;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: left;
+}
