@@ -134,3 +134,47 @@ rm docs/photo-2025-06-08-test-title.html
   ```
   source venv/bin/activate
   ```
+
+# 🌀 Larrie's Feedback Loop
+
+A 3-step cycle to keep development focused, confident, and reversible.
+
+---
+
+## 1. 🛠 Make a Change
+Write or move something:
+- Update a layout
+- Adjust SCSS
+- Rename a file
+- Add a new component or idea
+
+**Ask:** What am I trying to improve?
+
+---
+
+## 2. 🔍 Observe the Result
+Check what happened:
+- Open the site
+- Resize the window
+- Check output in DevTools
+- Trust your design sense
+
+**Ask:** Did it do what I expected?  
+**Does it *feel* right?
+
+---
+
+## 3. 🧭 Decide What to Do Next
+Based on what you saw:
+- Keep it?
+- Roll it back?
+- Refactor or branch?
+- Make a commit or note?
+
+**Ask:** Is this a reversible change?  
+If yes → keep going  
+If no → commit or pause
+
+---
+
+✅ Loop complete. Start again.
