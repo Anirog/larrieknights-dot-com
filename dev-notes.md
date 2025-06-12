@@ -178,3 +178,20 @@ If no → commit or pause
 ---
 
 ✅ Loop complete. Start again.
+
+---
+
+## 🔁 Feedback Loop Reminder
+
+1. **Make a Change**  
+   Try one small thing. Keep it focused.
+
+2. **Observe the Result**  
+   Preview it. Use DevTools. Trust what you see + feel.
+
+3. **Decide What’s Next**  
+   If it worked → commit & move on  
+   If unsure → write a note or pause  
+   Ask: *“Is this a reversible change?”*
+
+→ Loop complete. Start again.
