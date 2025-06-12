@@ -1,5 +1,21 @@
 # Dev Notes – larrieknights.com
 
+# 🪶 Dev Notes
+
+This file is not for perfection — it's for reflection.
+
+It’s where I track what I’ve built, what I’ve learned, and what I’m figuring out.  
+It’s not a to-do list. It’s not a performance log.  
+It’s a quiet record of momentum, however small.
+
+📌 On tough days:  
+- I don’t need to rush.  
+- I don’t need to know everything.  
+- I don’t need to do it all at once.
+
+I just need to stay in the loop.  
+Tighten it. Trust it. Keep going.
+
 This file documents a typical full test and deployment flow for your site, including all four Python scripts.
 
 ---
