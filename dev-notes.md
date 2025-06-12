@@ -16,6 +16,8 @@ It’s a quiet record of momentum, however small.
 I just need to stay in the loop.  
 Tighten it. Trust it. Keep going.
 
+---
+
 This file documents a typical full test and deployment flow for your site, including all four Python scripts.
 
 ---
