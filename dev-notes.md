@@ -20,6 +20,85 @@ Tighten it. Trust it. Keep going.
 
 ---
 
+## 2025-06-13 – Browse Grid Layout Refactor
+
+- Moved `.browse-image-grid-container` layout styles from inline test HTML to `_image-grid-container.css`
+- Created test page showing 3 grid breakpoints: mobile (2 cols), tablet (4 cols), desktop (8 cols)
+- Visually confirmed all layouts working correctly
+- Removed duplicate layout rules from test HTML for cleaner simulation
+- Noticed mild uncertainty despite success — documented as feedback loop awareness rather than error
+
+---
+
+# 🌀 Larrie's Feedback Loop
+
+A 3-step cycle to keep development focused, confident, and reversible.
+
+---
+
+## 1. 🛠 Make a Change
+Write or move something:
+- Update a layout
+- Adjust SCSS
+- Rename a file
+- Add a new component or idea
+
+**Ask:** What am I trying to improve?
+
+---
+
+## 2. 🔍 Observe the Result
+Check what happened:
+- Open the site
+- Resize the window
+- Check output in DevTools
+- Trust your design sense
+
+**Ask:** Did it do what I expected?  
+**Does it *feel* right?
+
+---
+
+## 3. 🧭 Decide What to Do Next
+Based on what you saw:
+- Keep it?
+- Roll it back?
+- Refactor or branch?
+- Make a commit or note?
+
+**Ask:** Is this a reversible change?  
+If yes → keep going  
+If no → commit or pause
+
+---
+
+✅ Loop complete. Start again.
+
+---
+
+## 🔁 Feedback Loop Reminder
+
+1. **Make a Change**  
+   Try one small thing. Keep it focused.
+
+2. **Observe the Result**  
+   Preview it. Use DevTools. Trust what you see + feel.
+
+3. **Decide What’s Next**  
+   If it worked → commit & move on  
+   If unsure → write a note or pause  
+   Ask: *“Is this a reversible change?”*
+
+→ Loop complete. Start again.
+
+
+---
+
+## 🧠 Recent Insight
+✅ Isolated `.browse-image-grid-container` into a test CSS file, copied all relevant styles from `styles.css`, and resolved layout issues — even without knowing exactly how, I trusted the process and tightened my feedback loop 🌀
+
+---
+
 ## ✅ Full Test Flow
 
 ### 1. Rebuild the Entire Site
@@ -150,64 +229,3 @@ rm docs/photo-2025-06-08-test-title.html
   ```
   source venv/bin/activate
   ```
-
-# 🌀 Larrie's Feedback Loop
-
-A 3-step cycle to keep development focused, confident, and reversible.
-
----
-
-## 1. 🛠 Make a Change
-Write or move something:
-- Update a layout
-- Adjust SCSS
-- Rename a file
-- Add a new component or idea
-
-**Ask:** What am I trying to improve?
-
----
-
-## 2. 🔍 Observe the Result
-Check what happened:
-- Open the site
-- Resize the window
-- Check output in DevTools
-- Trust your design sense
-
-**Ask:** Did it do what I expected?  
-**Does it *feel* right?
-
----
-
-## 3. 🧭 Decide What to Do Next
-Based on what you saw:
-- Keep it?
-- Roll it back?
-- Refactor or branch?
-- Make a commit or note?
-
-**Ask:** Is this a reversible change?  
-If yes → keep going  
-If no → commit or pause
-
----
-
-✅ Loop complete. Start again.
-
----
-
-## 🔁 Feedback Loop Reminder
-
-1. **Make a Change**  
-   Try one small thing. Keep it focused.
-
-2. **Observe the Result**  
-   Preview it. Use DevTools. Trust what you see + feel.
-
-3. **Decide What’s Next**  
-   If it worked → commit & move on  
-   If unsure → write a note or pause  
-   Ask: *“Is this a reversible change?”*
-
-→ Loop complete. Start again.
