@@ -37,7 +37,9 @@ Tighten it. Trust it. Keep going.
 Today I sketched out a horizontally scrolling featured card layout in CodePen. It reminded me why I like using CodePen so much - it gives me a safe space to experiment without the pressure of "getting it right."
 
 It's a pause.
+
 A creative breath.
+
 And that pause helps tighten the loop.
 
 It's not about rushing to finish. It's about shortening the distance between an idea and how it feels when I try it.
