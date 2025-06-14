@@ -50,7 +50,7 @@ Using CodePen is part of how I tune into the 🌀 - making space within the loop
 
 ---
 
-# 📐 Flex Grow, Shrink, Basis - Notes
+# 🔧 Flexbox Notes — Grow, Shrink, Basis
 
 ## Saturday, 14 June 2025
 
