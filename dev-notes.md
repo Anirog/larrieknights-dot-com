@@ -50,6 +50,50 @@ Using CodePen is part of how I tune into the 🌀 - making space within the loop
 
 ---
 
+# 📐 Flex Grow, Shrink, Basis - Notes
+
+## Saturday, 14 June 2025
+
+When using the flex shorthand:
+
+```css
+flex: grow shrink basis;
+```
+
+It maps to:
+
+```css
+flex-grow:   ?;  // Can the item grow if there's space?
+flex-shrink: ?;  // Can it shrink if space is tight?
+flex-basis:  ?;  // What's the starting width or size?
+```
+
+Example:
+
+```css
+flex: 0 0 100vw;
+```
+
+Means:
+
+- Don't grow (0)
+- Don't shrink (0)
+- Start at full screen width (100vw)
+
+That's how the horizontal card layout works - each card stays exactly one screen wide.
+
+It helps to write the longhand first:
+
+```css
+flex-grow: 0;
+flex-shrink: 0;
+flex-basis: 100vw;
+```
+
+Then switch to shorthand when I understand what each part does.
+
+---
+
 # 🌀 Larrie's Feedback Loop
 
 A 3-step cycle to keep development focused, confident, and reversible.
