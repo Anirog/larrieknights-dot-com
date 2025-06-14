@@ -30,6 +30,24 @@ Tighten it. Trust it. Keep going.
 
 ---
 
+# 🌀 Tightening the Loop - CodePen Insight
+
+## Saturday, 14 June 2025
+
+Today I sketched out a horizontally scrolling featured card layout in CodePen. It reminded me why I like using CodePen so much - it gives me a safe space to experiment without the pressure of "getting it right."
+
+It's a pause.
+A creative breath.
+And that pause helps tighten the loop.
+
+It's not about rushing to finish. It's about shortening the distance between an idea and how it feels when I try it.
+
+Using CodePen is part of how I tune into the 🌀 - making space within the loop instead of trying to escape it. Trusting small steps. Letting clarity emerge by doing.
+
+[https://codepen.io/anirog/pen/yyNEKvE](https://codepen.io/anirog/pen/yyNEKvE?editors=1100)
+
+---
+
 # 🌀 Larrie's Feedback Loop
 
 A 3-step cycle to keep development focused, confident, and reversible.
