@@ -15,14 +15,14 @@ There’s something comforting about having her around. She doesn’t ask for mu
 
 These four photos capture a little of who she is. No posing, no tricks. Just Lucky being Lucky.
 
-## Lucky Sitting in the Sun
+## Sunbathing
 ![Lucky Sitting in the Sun](https://ik.imagekit.io/1wh3oo1zp/lucky-in-the-sun_9p9xdkxId_)
 
-## Lucky at Hardwick Hall
+## At Hardwick Hall
 ![Lucky at Hardwick Hall](https://ik.imagekit.io/1wh3oo1zp/lucky-at-chatsworth_cAd0ruTGW)
 
-## Lucky in Plant Pot
+## She Likes to Sit in Strange Places
 ![Lucky in Plant Pot](https://ik.imagekit.io/1wh3oo1zp/lucky-in-plant-pot_7CF-Poo7n)
 
-## Lucky on Chair
+## Enjoying the Sun
 ![Lucky on Chair](https://ik.imagekit.io/1wh3oo1zp/lucky-on-chair_gp2p6sV6u)
