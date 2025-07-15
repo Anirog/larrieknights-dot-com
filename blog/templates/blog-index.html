@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Larrie Knights – Blog</title>
     <meta name="description" content="Blog posts about design, photography, and quiet creativity.">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../css/styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -46,7 +48,7 @@
                 <label for="nav-toggle" class="nav-toggle-label">
                     <span class="hamburger"></span>
                 </label>
-                
+
                 <nav class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
@@ -88,31 +90,45 @@
 
         <div class="pagination-container">
 
-            <!-- Previous arrow (always shown) -->
-            <a href="#" class="pagination-arrow disabled">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8" viewBox="0 0 256 256">
-                    <path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z">
-                    </path>
-                </svg>
-            </a>
+            <!-- Previous arrow -->
+            {% if pagination.prev_page %}
+            <a href="{{ pagination.prev_page }}" class="pagination-arrow">
+                {% else %}
+                <a href="#" class="pagination-arrow disabled">
+                    {% endif %}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8" viewBox="0 0 256 256">
+                        <path
+                            d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z">
+                        </path>
+                    </svg>
+                </a>
 
-            <!-- Page numbers -->
+                <!-- Page numbers -->
+                {% for number in pagination.page_numbers %}
+                {% if number == pagination.current %}
+                <a href="#" class="pagination-link active">{{ number }}</a>
+                {% else %}
+                <a href="{{ 'index.html' if number == 1 else 'page-' ~ number ~ '.html' }}" class="pagination-link">{{
+                    number }}</a>
+                {% endif %}
+                {% endfor %}
 
-            <a href="#" class="pagination-link active">
-                1
-            </a>
-
-
-            <!-- Next arrow (always shown) -->
-            <a href="#" class="pagination-arrow disabled">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8" viewBox="0 0 256 256">
-                    <path
-                        d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z">
-                    </path>
-                </svg>
-            </a>
+                <!-- Next arrow -->
+                {% if pagination.next_page %}
+                <a href="{{ pagination.next_page }}" class="pagination-arrow">
+                    {% else %}
+                    <a href="#" class="pagination-arrow disabled">
+                        {% endif %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z">
+                            </path>
+                        </svg>
+                    </a>
 
         </div>
+
 
 
 
