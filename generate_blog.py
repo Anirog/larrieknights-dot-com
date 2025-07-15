@@ -75,6 +75,15 @@ for filename in os.listdir(POSTS_DIR):
 # Sort posts by date (newest first)
 all_posts.sort(key=lambda x: datetime.datetime.strptime(x["date"], "%d %B %Y"), reverse=True)
 
+# Pagination setup
+POSTS_PER_PAGE = 8
+
+# Split posts into chunks
+def chunk_posts(posts, size):
+    return [posts[i:i + size] for i in range(0, len(posts), size)]
+
+paginated_posts = chunk_posts(all_posts, POSTS_PER_PAGE)
+
 # Add prev/next URLs
 for i, post in enumerate(all_posts):
     post["prev_url"] = all_posts[i - 1]["filename"] if i > 0 else None
@@ -96,10 +105,29 @@ for post in all_posts:
     with open(output_path, "w") as f:
         f.write(output_html)
 
-# Render blog index
-output_index_html = index_template.render(posts=all_posts)
-with open(OUTPUT_INDEX_FILE, "w") as f:
-    f.write(output_index_html)
+# Render paginated blog index pages
+total_pages = len(paginated_posts)
+
+for i, posts_on_page in enumerate(paginated_posts):
+    page_num = i + 1
+    is_first = page_num == 1
+    is_last = page_num == total_pages
+
+    pagination = {
+        "current": page_num,
+        "total": total_pages,
+        "prev_page": None if is_first else (f"index.html" if page_num == 2 else f"page-{page_num - 1}.html"),
+        "next_page": None if is_last else f"page-{page_num + 1}.html",
+        "page_numbers": list(range(1, total_pages + 1)),
+    }
+
+    rendered_html = index_template.render(posts=posts_on_page, pagination=pagination)
+
+    output_filename = "index.html" if is_first else f"page-{page_num}.html"
+    output_path = os.path.join("docs/blog", output_filename)
+
+    with open(output_path, "w") as f:
+        f.write(rendered_html)
 
 from collections import defaultdict
 
