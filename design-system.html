@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      padding: 32px;
+      background-color: #202124;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #fff;
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      color: #8AB4F8;
+      font-size: 28px;
+    }
+
+    .swatch {
+      display: inline-block;
+      padding: 16px;
+      margin-right: 16px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .grid-preview img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .modal-toggle-button {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #3897d3;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 class="h1-text">Design System</h1>
+
+  <section>
+    <h2>Colour Palette</h2>
+    <div class="swatch" style="background:#8AB4F8;">#8AB4F8</div>
+    <div class="swatch" style="background:#CCCCCC;">#CCCCCC</div>
+    <div class="swatch" style="background:#202124; color:#fff;">#202124</div>
+    <div class="swatch" style="background:#303134; color:#fff;">#303134</div>
+    <div class="swatch" style="background:#2A2B2D; color:#fff;">#2A2B2D</div>
+  </section>
+
+  <section>
+    <h2>Typography</h2>
+    <h1 class="blog-title">Blog Title – 24px</h1>
+    <p class="post-meta">Post Meta – 14px</p>
+    <p class="post-content">Body Text – 18px Inter. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </section>
+
+  <section>
+    <h2>Tags</h2>
+    <span class="tag">.tag</span>
+    <span class="blog-tag">.blog-tag</span>
+  </section>
+
+  <section>
+    <h2>Links & Buttons</h2>
+    <a href="#" class="blog-readmore">Read More →</a>
+    <br><br>
+    <a href="#" class="footer-link-text">Footer Link</a>
+  </section>
+
+  <section>
+    <h2>Blog Card</h2>
+    <div class="blog-card">
+      <img class="card-img" src="https://placehold.co/400x252" alt="Placeholder image">
+      <h3 class="blog-title">Sample Card Title</h3>
+      <p class="blog-meta">12 July 2025 · Photography</p>
+      <p class="blog-excerpt">This is a short preview of the blog post. It gives a summary of the content.</p>
+      <a href="#" class="blog-readmore">Read More</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Image Grid</h2>
+    <div class="browse-image-grid-container">
+      <img src="https://placehold.co/160x160" alt="grid image">
+      <img src="https://placehold.co/160x160" alt="grid image">
+      <img src="https://placehold.co/160x160" alt="grid image">
+      <img src="https://placehold.co/160x160" alt="grid image">
+      <img src="https://placehold.co/160x160" alt="grid image">
+      <img src="https://placehold.co/160x160" alt="grid image">
+    </div>
+  </section>
+
+  <!-- <section>
+    <h2>Toast Notification</h2>
+    <div class="scroll-toast show">
+      <span class="toast-icon">🔔</span> This is a toast message.
+    </div>
+  </section> -->
+
+  <section>
+    <h2>Modal</h2>
+    <button class="modal-toggle-button" onclick="document.getElementById('exampleModal').classList.add('open')">Open
+      Modal</button>
+    <div id="exampleModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('exampleModal').classList.remove('open')">&times;</span>
+        <h3 class="blog-title">Modal Title</h3>
+        <p>This is a modal. You can place any content here such as forms, text or images.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Navigation</h2>
+    <div class="header-container">
+      <div class="menu-container">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span class="hamburger"></span>
+        </label>
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Photos</a>
+          <a href="#">Blog</a>
+          <a href="#">About</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Form Fields</h2>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email..">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write something.." rows="4"></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <section>
+    <h2>Layout Utilities</h2>
+    <div class="next-previous-container">
+      <div class="previous-container">
+        <span class="previous-arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#ffffff"
+            viewBox="0 0 256 256">
+            <path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"></path>
+          </svg></span>
+        <span class="previous-day-text">Previous</span>
+      </div>
+      <div class="next-container">
+        <span class="next-day-text">Next</span>
+        <span class="next-arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#ffffff"
+            viewBox="0 0 256 256">
+            <path
+              d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z">
+            </path>
+          </svg></span>
+      </div>
+    </div>
+
+    <div class="pagination-container">
+      <a href="#" class="pagination-arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+          fill="#ffffff" viewBox="0 0 256 256">
+          <path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"></path>
+        </svg></a>
+      <a href="#" class="pagination-link active">1</a>
+      <a href="#" class="pagination-link">2</a>
+      <a href="#" class="pagination-link">3</a>
+      <a href="#" class="pagination-arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+          fill="#ffffff" viewBox="0 0 256 256">
+          <path
+            d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z">
+          </path>
+        </svg></a>
+    </div>
+  </section>
+
+</body>
+
+</html>
