@@ -102,8 +102,8 @@ def render_templates(photos):
 
     os.system(f'cp css/styles.css {DIST_DIR}/css/styles.css')
 
-    profile_src = os.path.join(IMAGE_DIR, 'larrie-knights.jpg')
-    profile_dest = os.path.join(DIST_DIR, 'images', 'larrie-knights.jpg')
+    profile_src = os.path.join(IMAGE_DIR, 'larrie-knights.png')
+    profile_dest = os.path.join(DIST_DIR, 'images', 'larrie-knights.png')
     if os.path.exists(profile_src):
         os.system(f'cp "{profile_src}" "{profile_dest}"')
 
