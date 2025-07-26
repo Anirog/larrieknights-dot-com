@@ -39,16 +39,7 @@ h1 {
 }
 
 .logo {
-  border-radius: 50%;
   margin-top: 21px;
-}
-
-/* 500px or larger */
-@media (min-width: 31.25em) {
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
 }
 
 .about {
