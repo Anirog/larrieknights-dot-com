@@ -340,7 +340,7 @@ a {
 }
 
 .header-container {
-  margin: 16px 16px 16px 16px;
+  margin: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
