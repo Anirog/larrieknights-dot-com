@@ -1,6 +1,6 @@
 # Personal Website Project
 
-This project powers my personal website [larrieknights.com](https://larrieknights.com), including:
+This project powers my personal website [larrieknights.com](https://larrieknights.com) including:
 
 - A photoblog with image posts
 - A markdown-based blog with tags and pagination
