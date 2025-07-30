@@ -2,7 +2,7 @@
 
 This is a personal website project hosted on GitHub Pages at [https://larrieknights.com](https://larrieknights.com). It includes:
 
-- A daily photoblog (one photo per day, with EXIF metadata and pagination)
+- A daily photoblog (with EXIF metadata and pagination)
 - A blog (markdown-based with tag support and pagination)
 - A featured photo card layout (currently static, will be expanded)
 - All HTML is static and generated locally using custom Python scripts and Jinja2 templates
