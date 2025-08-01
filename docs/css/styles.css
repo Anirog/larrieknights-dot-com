@@ -26,6 +26,34 @@
   padding-bottom: 0.3rem;
 }
 
+.post-content ol {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 18px;
+  padding-left: 1.2em;
+  /* Indent the list */
+  list-style-type: decimal;
+  /* Default number style */
+}
+
+.post-content ul {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 18px;
+  padding-left: 1.2em;
+  /* Same indent as <ol> */
+  list-style-type: disc;
+  /* Bullet points */
+}
+
+.post-content ul li {
+  margin-bottom: 1px;
+}
+
 .post-nav .disabled {
   opacity: 0;
   pointer-events: none;
