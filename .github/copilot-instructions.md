@@ -62,6 +62,8 @@ This is a personal website project hosted on GitHub Pages at [https://larrieknig
 
 ## Other Notes
 
+This project contains all code and design for my personal website including a photoblog and blog, both built using Python scripts, Jinja templates, and plain CSS. It’s hosted on GitHub Pages. Please keep responses focused on this setup, avoid suggesting platforms like WordPress or Node.js, and help me streamline workflows using my current tooling. I prefer clear, simple, and minimal solutions.
+
 - No HTML is edited by hand – all content is managed via scripts
 - Always test output locally with Live Server before pushing
 - Design and layout testing often happens in CodePen or Sketch
