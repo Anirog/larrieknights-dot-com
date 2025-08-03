@@ -1,6 +1,6 @@
 # Dev Notes – larrieknights.com
 
-This file documents a typical full test and deployment flow for your site, including all four Python scripts.
+This file documents a typical full test and deployment flow for your site, including all two Python scripts.
 
 # 🪶 Dev Notes
 
@@ -17,16 +17,6 @@ It’s a quiet record of momentum, however small.
 
 I just need to stay in the loop.  
 Tighten it. Trust it. Keep going.
-
----
-
-## 2025-06-13 – Browse Grid Layout Refactor
-
-- Moved `.browse-image-grid-container` layout styles from inline test HTML to `_image-grid-container.css`
-- Created test page showing 3 grid breakpoints: mobile (2 cols), tablet (4 cols), desktop (8 cols)
-- Visually confirmed all layouts working correctly
-- Removed duplicate layout rules from test HTML for cleaner simulation
-- Noticed mild uncertainty despite success — documented as feedback loop awareness rather than error
 
 ---
 
@@ -158,25 +148,12 @@ If no → commit or pause
 
 ---
 
-## 🧠 Recent Insight
-✅ Isolated `.browse-image-grid-container` into a test CSS file, copied all relevant styles from `styles.css`, and resolved layout issues — even without knowing exactly how, I trusted the process and tightened my feedback loop 🌀
-
----
 
 ## ✅ Full Test Flow
 
-### 1. Rebuild the Entire Site
-
-```
-python rebuild.py
-```
-
-- Regenerates all blog pages, tag pages, photo pages, and browse pages
-- Rebuilds the `/docs/` folder which is used by GitHub Pages to publish the site
-
 ---
 
-### 2. Create a New Blog Post
+### 1. Create a New Blog Post
 
 ```
 python new_post.py
@@ -188,74 +165,52 @@ You’ll be prompted for:
 - Optional image path and alt text
 
 This script:
-- Creates a `.md` file in `blog/posts/`
+- Creates a `.md` file in `posts/`
 - Adds frontmatter with title, date, tags, slug, image, and alt text
-- Copies the image to `blog/images/` (if supplied)
+- Copies the image to `images/` (if supplied)
 
 ✅ After running, check that the new file exists and looks correct.
 
 ---
 
-### 3. Generate Blog HTML
+### 2. Generate Blog HTML
 
 ```
 python generate_blog.py
 ```
 
 This will:
-- Convert all `.md` files in `blog/posts/` to HTML
-- Output blog posts to `docs/blog/`
-- Create tag pages like `tag-photography.html` in `docs/blog/`
-- Update `docs/blog/index.html` with latest blog entries and pagination
+- Convert all `.md` files in `posts/` to HTML
+- Output blog posts to `docs/`
+- Create tag pages like `tag-photography.html` in `docs/`
+- Update `docs/index.html` with latest blog entries and pagination
 
-✅ Open `docs/blog/index.html` in Live Server to confirm your new post appears.
-
----
-
-### 4. Upload a New Photo
-
-```
-python upload.py
-```
-
-You’ll be prompted to:
-- Select a photo file
-- Enter a title (used in the filename and page)
-
-This script:
-- Copies and renames the image
-- Extracts EXIF data (if available)
-- Creates a photo page (e.g. `photo-2025-06-08-title.html`)
-- Adds the image to `browse.html` and paginated pages
-
-✅ Check that the new photo appears in `docs/` and on your browse page.
+✅ Open `docs/index.html` in Live Server to confirm your new post appears.
 
 ---
 
-### 5. Preview the Site Locally
+### 3. Preview the Site Locally
 
 You can use Live Server or open `docs/index.html` directly in your browser.
 
 Check:
 - Homepage (`index.html`)
-- Browse page (`browse.html`)
-- Blog (`blog/index.html`)
-- Tag pages (`blog/tag-example.html`)
+- Tag pages (`tag-example.html`)
 - Links (`links.html`)
-- Individual photo and blog pages
-- Navigation and image display
+- Individual blog pages
+- Navigation
 
 ✅ Confirm layout, styling, and links all work correctly.
 
 ---
 
-### 6. Push Changes to GitHub
+### 4. Push Changes to GitHub
 
 Once you’ve verified everything locally:
 
 ```
 git add .
-git commit -m "Update blog and photos, test environment and scripts"
+git commit -m "Update blog, test environment and scripts"
 git push
 ```
 
@@ -273,14 +228,10 @@ If you created test content:
 
 ```
 # Delete test blog post
-rm blog/posts/2025-06-08-test-post.md
+rm posts/2025-06-08-test-post.md
 
 # Delete test image
-rm blog/images/test-image.jpg
-
-# Delete test photo page
-rm docs/photo-2025-06-08-test-title.html
-```
+rm images/test-image.jpg
 
 ---
 

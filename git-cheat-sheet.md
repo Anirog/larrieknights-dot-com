@@ -1,5 +1,5 @@
 
-# Git Cheat Sheet – For My Photoblog Project
+# Git Cheat Sheet – For My Blog Project
 
 ## ✅ Everyday Commands
 
