@@ -28,7 +28,7 @@ This is a personal website project hosted on GitHub Pages at [https://larrieknig
 ## Libraries and Tools
 
 - Python standard library, plus:
-  - `PIL`, `piexif`, `jinja2`
+  - `PIL`, `piexif`, `jinja2`, `markdown`
 - GitHub Pages for hosting (serving `/docs/` folder)
 - No Node.js or bundlers; no PHP or server-side logic
 - Designed to run locally using Python 3 and a virtualenv
