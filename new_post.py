@@ -17,7 +17,7 @@ if not image.startswith("http"):
 today = date.today().isoformat()
 slug = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
 filename = f"{today}-{slug}"
-filepath = f"blog/posts/{filename}.md"
+filepath = f"posts/{filename}.md"
 
 # Format frontmatter
 frontmatter = f"""---
@@ -33,7 +33,7 @@ Start writing your post here...
 """
 
 # Write to file
-os.makedirs("blog/posts", exist_ok=True)
+os.makedirs("posts", exist_ok=True)
 with open(filepath, "w") as f:
     f.write(frontmatter)
 
@@ -47,10 +47,9 @@ import shutil
 import os
 
 favicon_src = "site_files/favicon.ico"
-blog_dir = os.path.join("docs", "blog")
-posts_dir = os.path.join(blog_dir, "posts")
+blog_dir = "docs"
 
-for target_dir in [blog_dir, posts_dir]:
+for target_dir in [blog_dir]:
     if os.path.exists(favicon_src):
         shutil.copy(favicon_src, os.path.join(target_dir, "favicon.ico"))
         print(f"✅ favicon.ico copied to {target_dir}")

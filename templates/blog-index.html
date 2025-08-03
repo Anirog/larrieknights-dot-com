@@ -62,79 +62,24 @@
 
         <!-- Card Begin -->
 
-        
+        {% for post in posts %}
         <div class="card blog-card">
-            <h2 class="blog-title">Meet Lucky</h2>
-            <img src="https://ik.imagekit.io/1wh3oo1zp/1-lucky-in-kitchen-black-and-white_MrCka3ARq" alt="Post preview" class="card-img" style="object-position: center 30%;">
+            <h2 class="blog-title">{{ post.title }}</h2>
+            <img src="{{ post.image }}" alt="Post preview" class="card-img" style="object-position: center 30%;">
             <div class="card-content">
                 <p class="blog-meta">
-                    23 June 2025
+                    {{ post.date }}
                     <span class="blog-tags">
-                        
-                        <a href="tag-dog.html" class="blog-tag">dog</a>
-                        
-                        <a href="tag-photography.html" class="blog-tag">photography</a>
-                        
+                        {% for tag in post.tags %}
+                        <a href="tag-{{ tag | lower | replace(' ', '-') }}.html" class="blog-tag">{{ tag }}</a>
+                        {% endfor %}
                     </span>
                 </p>
-                <p class="blog-excerpt">Lucky isn’t the kind of dog who makes a fuss. She’s calm, gentle, and always close by — not in a needy way, just quietly present. If I move to another room, she often follows. If I sit down, she’ll settle nearby. It’s like she simply wants to be where I am....</p>
-                <a href="posts/2025-06-23-meet-lucky.html" class="blog-readmore">Read more →</a>
+                <p class="blog-excerpt">{{ post.excerpt }}</p>
+                <a href="{{ post.url }}" class="blog-readmore">Read more →</a>
             </div>
         </div>
-        
-        <div class="card blog-card">
-            <h2 class="blog-title">Stick on Eyes Project</h2>
-            <img src="https://blog.larrieknights.com/images/stop-buying-stuff.webp" alt="Post preview" class="card-img" style="object-position: center 30%;">
-            <div class="card-content">
-                <p class="blog-meta">
-                    5 June 2025
-                    <span class="blog-tags">
-                        
-                        <a href="tag-photography.html" class="blog-tag">photography</a>
-                        
-                    </span>
-                </p>
-                <p class="blog-excerpt">It all started late one night shopping on Amazon in January 2020, as I was browsing the virtual aisles looking at expensive cameras and headphones I didn't need, I looked up and noticed the note I have permanently on my desk, that reads "Stop Buying Stuff"...</p>
-                <a href="posts/2025-06-05-stick-on-eyes-project.html" class="blog-readmore">Read more →</a>
-            </div>
-        </div>
-        
-        <div class="card blog-card">
-            <h2 class="blog-title">My Custom Key Settings for the Sony RX100 VII</h2>
-            <img src="https://ik.imagekit.io/1wh3oo1zp/sony-rx100-rear_XB02gYftq" alt="Post preview" class="card-img" style="object-position: center 30%;">
-            <div class="card-content">
-                <p class="blog-meta">
-                    2 June 2025
-                    <span class="blog-tags">
-                        
-                        <a href="tag-photography.html" class="blog-tag">photography</a>
-                        
-                        <a href="tag-tech.html" class="blog-tag">tech</a>
-                        
-                    </span>
-                </p>
-                <p class="blog-excerpt">On the rear of the RX100 VII, there are six primary buttons and a dial with four directional buttons. After experimenting with various setups, you can customise some of these buttons to change settings quickly without having to go into the settings menu of the camera, I’ve fine tuned my custom keys to suit my shooting style....</p>
-                <a href="posts/2025-06-02-my-custom-key-settings-for-the-sony-rx100-vii.html" class="blog-readmore">Read more →</a>
-            </div>
-        </div>
-        
-        <div class="card blog-card">
-            <h2 class="blog-title">An Alternative to the Ugmonk Analog Productivity Card Holder</h2>
-            <img src="https://anirog.github.io/images/IMG_0940.WEBP" alt="Post preview" class="card-img" style="object-position: center 30%;">
-            <div class="card-content">
-                <p class="blog-meta">
-                    1 June 2025
-                    <span class="blog-tags">
-                        
-                        <a href="tag-productivity.html" class="blog-tag">productivity</a>
-                        
-                    </span>
-                </p>
-                <p class="blog-excerpt">I saw the ugmonk analog productivity card holder on YouTube it's a nice wooden card holder that holds productivity cards. There are three different cards: Today, Next and Someday....</p>
-                <a href="posts/2025-06-01-an-alternative-to-the-ugmonk-analog-productivity-card-holder.html" class="blog-readmore">Read more →</a>
-            </div>
-        </div>
-        
+        {% endfor %}
 
 
         <!-- Card End -->
@@ -145,9 +90,11 @@
         <div class="pagination-container">
 
             <!-- Previous arrow -->
-            
+            {% if pagination.prev_page %}
+            <a href="{{ pagination.prev_page }}" class="pagination-arrow">
+                {% else %}
                 <a href="#" class="pagination-arrow disabled">
-                    
+                    {% endif %}
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8" viewBox="0 0 256 256">
                         <path
                             d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z">
@@ -156,16 +103,21 @@
                 </a>
 
                 <!-- Page numbers -->
-                
-                
-                <a href="#" class="pagination-link active">1</a>
-                
-                
+                {% for number in pagination.page_numbers %}
+                {% if number == pagination.current %}
+                <a href="#" class="pagination-link active">{{ number }}</a>
+                {% else %}
+                <a href="{{ 'index.html' if number == 1 else 'page-' ~ number ~ '.html' }}" class="pagination-link">{{
+                    number }}</a>
+                {% endif %}
+                {% endfor %}
 
                 <!-- Next arrow -->
-                
+                {% if pagination.next_page %}
+                <a href="{{ pagination.next_page }}" class="pagination-arrow">
+                    {% else %}
                     <a href="#" class="pagination-arrow disabled">
-                        
+                        {% endif %}
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8AB4F8"
                             viewBox="0 0 256 256">
                             <path

@@ -5,12 +5,12 @@ import datetime
 from jinja2 import Environment, FileSystemLoader
 
 # Paths
-POSTS_DIR = "blog/posts"
-TEMPLATES_DIR = "blog/templates"
-OUTPUT_POSTS_DIR = "docs/blog/posts"
+POSTS_DIR = "posts"
+TEMPLATES_DIR = "templates"
+OUTPUT_POSTS_DIR = "docs/posts"
 INDEX_TEMPLATE_FILE = "blog-index.html"
 POST_TEMPLATE_FILE = "blog-post.html"
-OUTPUT_INDEX_FILE = "docs/blog/index.html"
+OUTPUT_INDEX_FILE = "docs/index.html"
 
 # Setup Jinja2
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
@@ -124,7 +124,7 @@ for i, posts_on_page in enumerate(paginated_posts):
     rendered_html = index_template.render(posts=posts_on_page, pagination=pagination)
 
     output_filename = "index.html" if is_first else f"page-{page_num}.html"
-    output_path = os.path.join("docs/blog", output_filename)
+    output_path = os.path.join("docs", output_filename)
 
     with open(output_path, "w") as f:
         f.write(rendered_html)
@@ -143,13 +143,13 @@ tag_template = env.get_template("blog-tag.html")
 # Generate a tag page for each tag
 for tag, posts in tag_map.items():
     tag_slug = tag.lower().replace(" ", "-")
-    tag_output_path = os.path.join("docs", "blog", f"tag-{tag_slug}.html")
+    tag_output_path = os.path.join("docs", f"tag-{tag_slug}.html")
     with open(tag_output_path, "w") as f:
         f.write(tag_template.render(tag=tag, posts=posts))
 
 # Copy the blog-specific About page
 import shutil
-shutil.copy("templates/about-blog.html", "docs/blog/about.html")
+shutil.copy("templates/about-blog.html", "docs/about.html")
 
 print("✅ Blog generated successfully.")
 
@@ -161,7 +161,7 @@ import shutil
 import os
 
 favicon_src = "site_files/favicon.ico"
-blog_dir = os.path.join("docs", "blog")
+blog_dir = "docs"
 posts_dir = os.path.join(blog_dir, "posts")
 
 for target_dir in [blog_dir, posts_dir]:
