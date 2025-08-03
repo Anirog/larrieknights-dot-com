@@ -3,7 +3,7 @@ title: Get Smart With Money - Netflix Documentary
 date: 2025-08-03
 slug: 2025-08-03-get-smart-with-money-netflix-documentary
 tags: [TV]
-image: https://ik.imagekit.io/1wh3oo1zp/get-smart-with-money-netflix_8A7zBYgaE7
+image: https://ik.imagekit.io/1wh3oo1zp/Get-Smart-With-Money-netflix-poster_89R3exj20
 image_alt: Likes, Wants, Needs and Loves
 ---
 
@@ -41,5 +41,7 @@ A like is something that will bring you joy for about less than six months.
 Wants are just, there's no joy there, just temporary satisfaction.
 
 I want you to think of your needs and loves like a quadrant, so needs and loves are on this side and then likes and wants on this side so when you are focused on your needs and your loves you're really living in more of your life and when you're focused on your or likes and your wants, you're really living less of a life.
+
+![Netflix Get Smart With Money](https://ik.imagekit.io/1wh3oo1zp/get-smart-with-money-netflix_8A7zBYgaE7)
 
 [Check out “Get Smart With Money” on Netflix](https://www.netflix.com/us/title/81312877?s=i&trkid=260453186&vlang=en&clip=81616644)
