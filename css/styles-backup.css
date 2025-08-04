@@ -32,10 +32,8 @@
   line-height: 1.6;
   color: #ffffff;
   margin-bottom: 18px;
-  padding-left: 1.2em;
-  /* Indent the list */
   list-style-type: decimal;
-  /* Default number style */
+  list-style-position: inside;
 }
 
 .post-content ul {
@@ -44,10 +42,12 @@
   line-height: 1.6;
   color: #ffffff;
   margin-bottom: 18px;
-  padding-left: 1.2em;
-  /* Same indent as <ol> */
   list-style-type: disc;
-  /* Bullet points */
+  list-style-position: inside;
+}
+
+.post-content ol li {
+  margin-bottom: 1px;
 }
 
 .post-content ul li {
@@ -228,8 +228,6 @@ figure img {
 
 /* Blog Post Styles End */
 
-
-
 /* Blog Index Styles Start */
 
 .blog-card {
@@ -244,8 +242,6 @@ figure img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
-
-
 
 /* Remove bottom margin from the last card */
 .blog-card:last-child {
