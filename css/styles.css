@@ -383,16 +383,6 @@ a {
   transition: all 150ms ease-in-out;
 }
 
-.previous-day-text,
-.next-day-text {
-  transition: all 150ms ease-in-out;
-}
-
-.previous-day-text:hover,
-.next-day-text:hover {
-  color: #cccccc;
-}
-
 .header-container {
   margin: 16px;
   display: flex;
@@ -507,55 +497,12 @@ a {
   width: 30px;
 }
 
-.h1-container {
-  margin-bottom: 16px;
-}
-
-.h1-text {
-  font-weight: 500;
-  color: #ffffff;
-  text-align: center;
-  font-size: 20px;
-}
-
-.photoblog-text {
-  color: #bdbdbd;
-}
-
 .image-container {
   display: flex;
   justify-content: center;
   margin-left: 16px;
   margin-right: 16px;
   margin-bottom: 16px;
-}
-
-.browse-image-grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 160px);
-  /* Two columns, each 160px wide */
-  grid-template-rows: repeat(3, 160px);
-  /* Three rows, each 160px high */
-  gap: 22px;
-  /* Gap between images */
-  justify-content: center;
-  /* Center the grid horizontally */
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-bottom: 18px;
-}
-
-.browse-image-grid-container img {
-  width: 100%;
-  /* Make images fill their grid cells */
-  height: 100%;
-  object-fit: cover;
-  /* Maintain aspect ratio and cover the entire cell */
-}
-
-/* Hide extra thumbnails on mobile */
-.browse-image-grid-container a:nth-child(n+7) {
-  display: none;
 }
 
 img {
