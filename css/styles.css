@@ -245,15 +245,13 @@ figure img {
   border-bottom-right-radius: 0;
 }
 
-.blog-card p a,
-.blog-card .post-excerpt a {
+.blog-card p a {
   color: #8ab4f8;
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
 
-.blog-card p a:hover,
-.blog-card .post-excerpt a:hover {
+.blog-card p a:hover {
   color: #cccccc;
 }
 
