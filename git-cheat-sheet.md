@@ -86,7 +86,7 @@ git push origin --delete feature/add-mobile-nav
 
 1. Build the site:
    ```bash
-   python upload.py
+   python generate_blog.py
    ```
 
 2. Commit and push:
