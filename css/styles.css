@@ -199,20 +199,6 @@ figure img {
 
 /* Keyboard Shortcuts Styling End */
 
-.post-tags {
-  margin-top: 24px;
-}
-
-.tag {
-  display: inline-block;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 14px;
-  color: #8ab4f8;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-
 .post-nav {
   display: flex;
   justify-content: space-between;
