@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Meet Lucky",
+    "excerpt": "Lucky isn’t the kind of dog who makes a fuss. She’s calm, gentle, and always close by...",
+    "url": "2025-06-23-meet-lucky.html",
+    "image": "https://ik.imagekit.io/1wh3oo1zp/1-lucky-in-kitchen-black-and-white_MrCka3ARq",
+    "image_alt": "Lucky Wide Angle Black and White",
+    "tags": ["dog", "photography"]
+  },
+  {
+    "title": "Stick-On Eyes Project",
+    "excerpt": "A simple photo experiment using stick-on googly eyes to bring inanimate objects to life.",
+    "url": "2025-06-05-stick-on-eyes-project.html",
+    "image": "https://placehold.co/600x400?text=Eyes+Project",
+    "image_alt": "Stick-On Eyes",
+    "tags": ["project", "fun", "photography"]
+  },
+  {
+    "title": "Get Smart With Money – Netflix Documentary",
+    "excerpt": "Before you spend any money, there are four questions you should really ask yourself...",
+    "url": "2025-08-03-get-smart-with-money-netflix-documentary.html",
+    "image": "https://placehold.co/600x400?text=Money+Doc",
+    "image_alt": "Netflix Money Doc",
+    "tags": ["money", "finance", "documentary"]
+  }
+]

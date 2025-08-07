@@ -325,6 +325,32 @@ figure img {
   /* subtle slide */
 }
 
+/* Search Styles Start */
+
+.search-box {
+  width: calc(100% - 32px);
+  max-width: 424px;
+  padding: 12px 12px 12px 40px;
+  /* icon space on the left */
+  margin: 28px auto;
+  display: block;
+  font-size: 16px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background-color: #18191a;
+  color: #fff;
+  box-sizing: border-box;
+  background-image: url("../images/magnifying-glass.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 12px center;
+}
+
+.search-box::placeholder {
+  color: #888;
+}
+
+/* Search Styles End */
 
 /* Blog Index Styles End */
 
@@ -728,10 +754,13 @@ img {
 }
 
 /* Form Fields */
-input[type="text"],
-input[type="email"],
-select,
-textarea {
+
+/* Limit form field styling to modal only — prevents conflicts with search box */
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content select,
+.modal-content textarea {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 17px;
   width: 100%;
@@ -747,7 +776,7 @@ textarea {
 }
 
 /* Submit Button */
-input[type="submit"] {
+.modal-content input[type="submit"] {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
   background-color: #3897d3;
@@ -759,7 +788,7 @@ input[type="submit"] {
   transition: background 0.2s;
 }
 
-input[type="submit"]:hover {
+.modal-content input[type="submit"]:hover {
   background-color: #3080b3;
 }
 
