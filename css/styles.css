@@ -728,10 +728,13 @@ img {
 }
 
 /* Form Fields */
-input[type="text"],
-input[type="email"],
-select,
-textarea {
+
+/* Limit form field styling to modal only — prevents conflicts with search box */
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content select,
+.modal-content textarea {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 17px;
   width: 100%;
@@ -747,7 +750,7 @@ textarea {
 }
 
 /* Submit Button */
-input[type="submit"] {
+.modal-content input[type="submit"] {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
   background-color: #3897d3;
@@ -759,7 +762,7 @@ input[type="submit"] {
   transition: background 0.2s;
 }
 
-input[type="submit"]:hover {
+.modal-content input[type="submit"]:hover {
   background-color: #3080b3;
 }
 
