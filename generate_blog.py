@@ -218,7 +218,7 @@ for post in all_posts:
     search_data.append({
         "title": post['title'],
         "excerpt": post['excerpt'],
-        "url": post['url'],
+        "url": f"/{post['url'].lstrip('/')}",  # ✅ Force absolute URL
         "image": post['image'],
         "image_alt": post['image_alt'],
         "tags": post['tags']
