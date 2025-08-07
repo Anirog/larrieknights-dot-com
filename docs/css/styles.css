@@ -351,6 +351,10 @@ figure img {
 }
 
 #searchResults {
+  margin-bottom: 0;
+}
+
+#searchResults.has-results {
   margin-bottom: 48px;
 }
 

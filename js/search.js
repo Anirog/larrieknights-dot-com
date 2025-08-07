@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
       searchInput.addEventListener('input', function () {
         const query = this.value.toLowerCase();
 
+        // input listener start
+
         if (query) {
           const results = posts.filter(post =>
             post.title.toLowerCase().includes(query) ||
@@ -29,29 +31,39 @@ document.addEventListener('DOMContentLoaded', function () {
             post.tags.join(',').toLowerCase().includes(query)
           );
 
-          resultsDiv.innerHTML = results.map(post => `
-            <div class="card blog-card">
-              <h2 class="blog-title">${post.title}</h2>
-              <img src="${post.image}" alt="${post.image_alt}" class="card-img">
-              <div class="card-content">
-                <p class="blog-meta">
-                  <span class="blog-tags">
-                    ${post.tags.map(tag => `<a href="${urlPrefix}/tag-${tag.toLowerCase()}.html" class="blog-tag">${tag}</a>`).join(' ')}
-                  </span>
-                </p>
-                <p class="blog-excerpt">${post.excerpt}</p>
-                <a href="${urlPrefix}${post.url}" class="blog-readmore">Read more →</a>
-              </div>
-            </div>
-          `).join('');
+          if (results.length > 0) {
+            resultsDiv.innerHTML = results.map(post => `
+      <div class="card blog-card">
+        <h2 class="blog-title">${post.title}</h2>
+        <img src="${post.image}" alt="${post.image_alt}" class="card-img">
+        <div class="card-content">
+          <p class="blog-meta">
+            <span class="blog-tags">
+              ${post.tags.map(tag => `<a href="${urlPrefix}/tag-${tag.toLowerCase()}.html" class="blog-tag">${tag}</a>`).join(' ')}
+            </span>
+          </p>
+          <p class="blog-excerpt">${post.excerpt}</p>
+          <a href="${urlPrefix}${post.url}" class="blog-readmore">Read more →</a>
+        </div>
+      </div>
+    `).join('');
+            resultsDiv.classList.add('has-results');
+          } else {
+            resultsDiv.innerHTML = '<p style="text-align:center; margin-top:24px;">No results found.</p>';
+            resultsDiv.classList.add('has-results');
+          }
 
           originalCards.forEach(card => card.style.display = 'none');
           if (pageContent) pageContent.style.display = 'none';
         } else {
           resultsDiv.innerHTML = '';
+          resultsDiv.classList.remove('has-results');
           originalCards.forEach(card => card.style.display = '');
           if (pageContent) pageContent.style.display = '';
         }
+
+        // input listener end
+
       });
     })
     .catch(err => {
