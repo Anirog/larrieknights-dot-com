@@ -180,3 +180,26 @@ if os.path.exists(css_src):
     print("✅ styles.css copied to docs/css/")
 else:
     print("❌ styles.css not found in css/")
+
+# --------------------------------------------
+# Generate search.json
+# --------------------------------------------
+
+import json
+
+search_data = []
+for post in all_posts:
+    search_data.append({
+        "title": post['title'],
+        "excerpt": post['excerpt'],
+        "url": post['url'],
+        "image": post['image'],
+        "image_alt": post['image_alt'],
+        "tags": post['tags']
+    })
+
+search_path = os.path.join("docs", "search.json")
+with open(search_path, "w", encoding="utf-8") as f:
+    json.dump(search_data, f, ensure_ascii=False, indent=2)
+
+print(f"✅ search.json written to {search_path}")
