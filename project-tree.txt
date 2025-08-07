@@ -1,0 +1,69 @@
+larrieknights-dot-com/
+├── .github/
+│   └── copilot-instructions.md
+├── .gitignore
+├── copycss.py
+├── copyjs.py
+├── css/
+│   └── styles.css
+├── dev-notes.md
+├── docs/
+│   ├── 404.html
+│   ├── about.html
+│   ├── CNAME
+│   ├── css/
+│   │   ├── links.css
+│   │   └── styles.css
+│   ├── favicon.ico
+│   ├── images/
+│   │   ├── larrie-knights.jpg
+│   │   ├── larrie-knights.png
+│   │   └── magnifying-glass.svg
+│   ├── index.html
+│   ├── js/
+│   │   ├── modal.js
+│   │   └── search.js
+│   ├── links.html
+│   ├── posts/
+│   │   ├── 2025-06-01-an-alternative-to-the-ugmonk-analog-productivity-card-holder.html
+│   │   ├── 2025-06-02-my-custom-key-settings-for-the-sony-rx100-vii.html
+│   │   ├── 2025-06-05-stick-on-eyes-project.html
+│   │   ├── 2025-06-23-meet-lucky.html
+│   │   ├── 2025-08-03-get-smart-with-money-netflix-documentary.html
+│   │   ├── 2025-08-07-being-there-by-jerzy-kosinski.html
+│   │   └── favicon.ico
+│   ├── search.json
+│   ├── social-preview.jpg
+│   ├── tag-books.html
+│   ├── tag-dog.html
+│   ├── tag-photography.html
+│   ├── tag-productivity.html
+│   ├── tag-tech.html
+│   ├── tag-tv.html
+│   └── thanks.html
+├── generate_blog.py
+├── git-cheat-sheet.md
+├── images/
+│   ├── larrie-knights.jpg
+│   ├── larrie-knights.png
+│   └── magnifying-glass.svg
+├── js/
+│   ├── modal.js
+│   └── search.js
+├── new_post.py
+├── posts/
+│   ├── 2025-06-01-an-alternative-to-the-ugmonk-analog-productivity-card-holder.md
+│   ├── 2025-06-02-my-custom-key-settings-for-the-sony-rx100-vii.md
+│   ├── 2025-06-05-stick-on-eyes-project.md
+│   ├── 2025-06-23-meet-lucky.md
+│   ├── 2025-08-03-get-smart-with-money-netflix-documentary.md
+│   └── 2025-08-07-being-there-by-jerzy-kosinski.md
+├── README.md
+├── requirements.txt
+├── site_files/
+│   └── favicon.ico
+└── templates/
+    ├── about-blog.html
+    ├── blog-index.html
+    ├── blog-post.html
+    └── blog-tag.html
