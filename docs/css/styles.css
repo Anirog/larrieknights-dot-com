@@ -346,8 +346,12 @@ figure img {
   background-position: 12px center;
 }
 
+.blog-index .search-box {
+  margin-bottom: 40px; /* for index and tag pages */
+}
+
 .blog-post .search-box {
-  margin-bottom: 0px;
+  margin-bottom: 8px;
 }
 
 .search-box::placeholder {
