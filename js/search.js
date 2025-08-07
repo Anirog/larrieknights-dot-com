@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
   fetch(searchPath)
     .then(response => response.json())
     .then(posts => {
+      const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+      const urlPrefix = isLocal ? '/docs' : '';
+
       searchInput.addEventListener('input', function () {
         const query = this.value.toLowerCase();
 
@@ -30,18 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
               <div class="card-content">
                 <p class="blog-meta">
                   <span class="blog-tags">
-                    ${post.tags.map(tag => `<a href="/tag-${tag.toLowerCase()}.html" class="blog-tag">${tag}</a>`).join(' ')}
+                    ${post.tags.map(tag => `<a href="${urlPrefix}/tag-${tag.toLowerCase()}.html" class="blog-tag">${tag}</a>`).join(' ')}
                   </span>
                 </p>
                 <p class="blog-excerpt">${post.excerpt}</p>
-                <a href="${post.url}" class="blog-readmore">Read more →</a>
+                <a href="${urlPrefix}${post.url}" class="blog-readmore">Read more →</a>
               </div>
             </div>
           `).join('');
 
           originalCards.forEach(card => card.style.display = 'none');
           if (pageContent) pageContent.style.display = 'none';
-
         } else {
           resultsDiv.innerHTML = '';
           originalCards.forEach(card => card.style.display = '');
