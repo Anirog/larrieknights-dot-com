@@ -351,7 +351,12 @@ figure img {
 }
 
 .blog-post .search-box {
-  margin-bottom: 28px;
+  margin-bottom: 0; /* tight spacing when no search results */
+}
+
+.blog-post #searchResults.has-results {
+  margin-top: 40px;
+  margin-bottom: 32px; /* or whatever feels right */
 }
 
 .search-box::placeholder {
