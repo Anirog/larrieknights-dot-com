@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     `).join('');
             resultsDiv.classList.add('has-results');
           } else {
-            resultsDiv.innerHTML = '<p style="text-align:center; margin-top:24px;">No results found.</p>';
+            resultsDiv.innerHTML = '<p style="text-align:center; margin-top:24px; color: #ffffff;">No results found.</p>';
             resultsDiv.classList.add('has-results');
           }
 
