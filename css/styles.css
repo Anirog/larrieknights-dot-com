@@ -350,6 +350,10 @@ figure img {
   color: #888;
 }
 
+#searchResults {
+  margin-bottom: 48px;
+}
+
 /* Search Styles End */
 
 /* Blog Index Styles End */
