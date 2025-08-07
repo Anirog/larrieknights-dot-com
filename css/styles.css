@@ -346,6 +346,10 @@ figure img {
   background-position: 12px center;
 }
 
+.blog-post .search-box {
+  margin-bottom: 0px;
+}
+
 .search-box::placeholder {
   color: #888;
 }
