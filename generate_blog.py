@@ -180,3 +180,52 @@ if os.path.exists(css_src):
     print("✅ styles.css copied to docs/css/")
 else:
     print("❌ styles.css not found in css/")
+
+import shutil
+import os
+
+# Copy search.js
+js_src = "js/search.js"
+js_dest = "docs/js/search.js"
+
+if os.path.exists(js_src):
+    shutil.copy(js_src, js_dest)
+    print("✅ search.js copied to docs/js/")
+else:
+    print("❌ search.js not found in js/")
+
+import shutil
+import os
+
+# Copy modal.js
+js_src = "js/modal.js"
+js_dest = "docs/js/modal.js"
+
+if os.path.exists(js_src):
+    shutil.copy(js_src, js_dest)
+    print("✅ modal.js copied to docs/js/")
+else:
+    print("❌ modal.js not found in js/")
+
+# --------------------------------------------
+# Generate search.json
+# --------------------------------------------
+
+import json
+
+search_data = []
+for post in all_posts:
+    search_data.append({
+        "title": post['title'],
+        "excerpt": post['excerpt'],
+        "url": post['url'],
+        "image": post['image'],
+        "image_alt": post['image_alt'],
+        "tags": post['tags']
+    })
+
+search_path = os.path.join("docs", "search.json")
+with open(search_path, "w", encoding="utf-8") as f:
+    json.dump(search_data, f, ensure_ascii=False, indent=2)
+
+print(f"✅ search.json written to {search_path}")

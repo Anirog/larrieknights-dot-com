@@ -2,7 +2,8 @@
 
 This project powers my personal website [larrieknights.com](https://larrieknights.com) including:
 
-- A markdown-based blog with tags and pagination
+- A markdown-based blog with tags, pagination and search
+- A static site generator that converts markdown to HTML
 - Clean, minimal styling using plain CSS
 - Automation scripts written in Python
 - Static site output for GitHub Pages deployment
