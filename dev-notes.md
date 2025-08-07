@@ -88,12 +88,10 @@ Then switch to shorthand when I understand what each part does.
 
 A 3-step cycle to keep development focused, confident, and reversible.
 
----
-
 ## 1. 🛠 Make a Change
 Write or move something:
 - Update a layout
-- Adjust SCSS
+- Adjust CSS
 - Rename a file
 - Add a new component or idea
 
@@ -150,8 +148,6 @@ If no → commit or pause
 
 
 ## ✅ Full Test Flow
-
----
 
 ### 1. Create a New Blog Post
 
@@ -232,6 +228,7 @@ rm posts/2025-06-08-test-post.md
 
 # Delete test image
 rm images/test-image.jpg
+```
 
 ---
 
@@ -244,3 +241,41 @@ rm images/test-image.jpg
   ```
   source venv/bin/activate
   ```
+
+---
+
+## 🛠 7 August 2025
+
+### ✅ Frontend
+
+- Finalised and tested **search functionality** across `index.html`, `blog-index.html`, `blog-post.html`, `blog-tag.html`, and `about-blog.html`.
+   - All pages now include a consistent search bar powered by `search.js`.
+   - Verified `search.json` contains accurate data, including correct image links and excerpts.
+   - Added spacing fix under search results by ensuring `#searchResults` has bottom margin.
+   - Improved search result card usability by wrapping content inside `#pageContent` for consistent styling and spacing.
+
+### ✅ UI & Styling
+
+- Reviewed and updated `styles.css`:
+   - Confirmed consistent card layout and spacing across blog list pages.
+   - Ensured `.blog-card p a` and `.blog-card .post-excerpt a` have correct hover and transition styles.
+   - Verified accessibility fix for email input: added `autocomplete="email"` attribute is still pending (optional).
+
+### ✅ Blog Content
+
+- Confirmed correct rendering of the **"Meet Lucky"** post:
+   - Markdown frontmatter and content are well-formed.
+   - Images load correctly with descriptive alt text.
+   - Tag links (`dog`, `photography`) point to correctly generated tag pages.
+
+### ✅ SEO & Meta
+
+- Verified `<meta>` tags for Open Graph and Twitter cards are working across templates.
+   Includes dynamic excerpt truncation using `{{ post.excerpt[:147].rstrip('.:;,- ') }}...` in `blog-post.html`.
+
+### ✅ Misc
+
+- Added `search.js` and `modal.js` to `<script>` tags in all relevant HTML files.
+- Maintained clean, minimal styling with plain CSS — no build tools used.
+
+---
