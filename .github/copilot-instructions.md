@@ -12,7 +12,7 @@ This is a personal website project hosted on GitHub Pages at [https://larrieknig
 - `/images/`: Blog post images
 - `/templates/`: Jinja2 templates for blog, tags, photo pages, browse pages
 - `/css/`: Plain CSS styles (no SCSS, no Tailwind)
-- `/js/`: Vanilla JavaScript for modal, keyboard nav, toast
+- `/js/`: Vanilla JavaScript for modal and search
 - Python scripts:
   - `new_post.py`: Create a new blog post
   - `generate_blog.py`: Build blog, tags, pagination
