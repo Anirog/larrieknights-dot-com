@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
   fetch(searchPath)
     .then(response => response.json())
     .then(posts => {
-      const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+      const isLocal =
+        window.location.hostname.startsWith('127.') ||
+        window.location.hostname === 'localhost' ||
+        window.location.hostname.startsWith('192.168.');
       const urlPrefix = isLocal ? '/docs' : '';
 
       searchInput.addEventListener('input', function () {
