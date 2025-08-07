@@ -34,7 +34,7 @@
 
 </head>
 
-<body class="blog-post">
+<body class="blog-post blog-index">
 
     <!-- container start -->
     <div class="container">
@@ -61,7 +61,12 @@
 
         </div>
 
+        <input type="text" id="searchInput" placeholder="Search blog posts..." class="search-box">
+        <div id="searchResults"></div>
+
         <!-- Blog Post Content Start -->
+
+        <div id="pageContent">
 
         <div class="blog-post-container">
 
@@ -79,8 +84,8 @@
                 <div class="post-content">
                     <p>I was inspired by the first paragraph of Being There by Jerzy Kosinski</p>
 <blockquote>
-<p>Plants were like people, they needed care to live, to survive their diseases, and to die peacefully.</p>
-<p><br>
+<p>Plants were like people, they needed care to live, to survive their diseases, and to die peacefully.
+<br>
 Yet plants were different from people. No plant is able to think about itself or able to know itself; there is no mirror in which the plant can recognise its face; no plant can do anything intentionally: it cannot help growing, and its growth has no meaning, since a plant cannot reason or dream.</p>
 </blockquote>
                 </div>
@@ -119,6 +124,7 @@ Yet plants were different from people. No plant is able to think about itself or
                 </script> <span class="phone">(mobile)</span><span class="tablet">(tablet)</span><span
                     class="desktop">(desktop)</span>
             </div>
+        </div>
         </div>
     </div>
 
@@ -160,6 +166,7 @@ Yet plants were different from people. No plant is able to think about itself or
     </div>
 
     <script src="../js/modal.js"></script>
+    <script src="../js/search.js"></script>
 
 </body>
 
