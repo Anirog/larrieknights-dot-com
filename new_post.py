@@ -5,8 +5,8 @@ import re
 # Prompt user for inputs
 title = input("Post title: ").strip()
 tags = input("Tags (comma separated): ").strip()
-image_input = input("Image path [https://ik.imagekit.io/your-default.jpg]: ").strip()
-image = image_input if image_input else "https://ik.imagekit.io/your-default.jpg"
+image_input = input("Image path [https://ik.imagekit.io/1wh3oo1zp/larrie-knighs-default_lhSm1y4Pb]: ").strip()
+image = image_input if image_input else "https://ik.imagekit.io/1wh3oo1zp/larrie-knighs-default_lhSm1y4Pb"
 image_alt = input("Image alt text: ").strip()
 
 # Validate image URL
