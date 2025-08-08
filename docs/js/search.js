@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
               ${post.tags.map(tag => `<a href="${urlPrefix}/tag-${tag.toLowerCase()}.html" class="blog-tag">${tag}</a>`).join(' ')}
             </span>
           </p>
-          <p class="blog-excerpt">${post.excerpt}</p>
+          <div class="blog-excerpt">${post.excerpt}</div>
           <a href="${urlPrefix}${post.url}" class="blog-readmore">Read more →</a>
         </div>
       </div>
