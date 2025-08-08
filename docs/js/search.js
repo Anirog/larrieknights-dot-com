@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resultsDiv.innerHTML = results.map(post => `
       <div class="card blog-card">
         <h2 class="blog-title">${post.title}</h2>
-        <img src="${post.image}" alt="${post.image_alt}" class="card-img">
+        ${post.image ? `<img src="${post.image}" alt="${post.image_alt || 'Blog image'}" class="card-img">` : ''}
         <div class="card-content">
           <p class="blog-meta">
             <span class="blog-tags">
