@@ -279,3 +279,31 @@ rm images/test-image.jpg
 - Maintained clean, minimal styling with plain CSS — no build tools used.
 
 ---
+
+You're welcome — here's a short summary you can paste into your **dev notes** or use as a **commit message**:
+
+---
+
+## ✅ Dev Notes – 8 August 2025
+
+- **Excerpt improvements:**
+   - Headings and links stripped from post excerpts using `BeautifulSoup` in `generate_blog.py`
+   - Excerpts now smart-truncated to 30 words
+   - Ellipsis (`...`) added inside `<p>` tag for clean layout
+
+- **Template updates:**
+   - Replaced all hardcoded `<p class="blog-excerpt">` with `<div class="blog-excerpt">` using `| safe`
+   - Conditional image rendering added in:
+      - `blog-index.html`
+      - `blog-tag.html`
+      - `blog-post.html`
+
+- **Search fixes:**
+   - `search.js` updated to:
+      - Wrap excerpts in `.blog-excerpt` div for consistent styling
+      - Only render `<img>` tag if `post.image` exists (prevents broken "null" images)
+
+- **Local workflow:**
+   - Created and merged feature branch locally for these fixes (not pushed to GitHub)
+   
+---
