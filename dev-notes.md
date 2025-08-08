@@ -280,10 +280,6 @@ rm images/test-image.jpg
 
 ---
 
-You're welcome — here's a short summary you can paste into your **dev notes** or use as a **commit message**:
-
----
-
 ## ✅ Dev Notes – 8 August 2025
 
 - **Excerpt improvements:**
