@@ -47,7 +47,25 @@ for filename in os.listdir(POSTS_DIR):
         html_body = markdown.markdown(body_markdown)
 
         # Create excerpt
-        excerpt = html_body.split("</p>")[0].replace("<p>", "").strip() + "..."
+        from bs4 import BeautifulSoup
+
+        soup = BeautifulSoup(html_body, 'html.parser')
+
+        # Remove all heading tags
+        for tag in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
+            tag.decompose()
+
+        # Remove all links but keep their text content
+        for a in soup.find_all('a'):
+            a.unwrap()
+
+        # Get the first paragraph
+        first_para = soup.find('p')
+        if first_para:
+            first_para.append("...")  # Add text inside the <p> tag
+            excerpt = str(first_para).strip()
+        else:
+            excerpt = ""
 
         slug = metadata["slug"]
 
