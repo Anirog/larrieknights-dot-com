@@ -55,15 +55,22 @@ for filename in os.listdir(POSTS_DIR):
         for tag in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
             tag.decompose()
 
-        # Remove all links but keep their text content
+        # Remove all links but keep the text
         for a in soup.find_all('a'):
             a.unwrap()
 
-        # Get the first paragraph
+        # Find the first paragraph
         first_para = soup.find('p')
+
         if first_para:
-            first_para.append("...")  # Add text inside the <p> tag
-            excerpt = str(first_para).strip()
+            # Get the text content and truncate to 30 words
+            words = first_para.get_text().strip().split()
+            truncated_text = ' '.join(words[:30]) + '...'
+
+            # Create a new <p> with truncated content
+            new_para = soup.new_tag("p")
+            new_para.string = truncated_text
+            excerpt = str(new_para)
         else:
             excerpt = ""
 
