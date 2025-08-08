@@ -35,27 +35,27 @@ Matt Lucas is great, a very funny man, his "Good Morning" posts in which he post
 
 Shows clips from The Fast Show, that always bring a smile to my face.
 
- [@TheFastShow1](https://twitter.com/TheFastShow1)
+[@TheFastShow1](https://twitter.com/TheFastShow1)
 
- ## People Selling Mirrors
+## People Selling Mirrors
 
- A bit of a weird one (in a good way) the account posts images of people selling mirrors on Facebook.
+A bit of a weird one (in a good way) the account posts images of people selling mirrors on Facebook.
 
- [@qSellingAMirror](https://twitter.com/SellingAMirror)
+[@qSellingAMirror](https://twitter.com/SellingAMirror)
 
- ## Naval Ravikant
+## Naval Ravikant
 
- Naval Ravikant is like a wise old sage in a young person's body. 
+Naval Ravikant is like a wise old sage in a young person's body.
 
- [@naval](https://twitter.com/naval)
+[@naval](https://twitter.com/naval)
 
- ## Navalism
+## Navalism
 
 Quotes from Naval Ravikant.
 
 [@NavalismHQ](https://twitter.com/NavalismHQ)
 
- ## Sir Michael
+## Sir Michael
 
 This account always makes me smile, he infiltrates WhatsApp group chats, and to humorous effect, the time he [Managed to make a nice profit in the group chat today](https://x.com/Michael1979/status/1216827743373078538?s=20) post is very clever.
 
