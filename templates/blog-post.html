@@ -68,62 +68,64 @@
 
         <div id="pageContent">
 
-        <div class="blog-post-container">
+            <div class="blog-post-container">
 
-            <a href="../index.html" class="back-link">← Back to Blog</a>
+                <a href="../index.html" class="back-link">← Back to Blog</a>
 
-            <article class="blog-post">
-                <h1>{{ post.title }}</h1>
+                <article class="blog-post">
+                    <h1>{{ post.title }}</h1>
 
-                <p class="post-meta">{{ post.date }}</p>
+                    <p class="post-meta">{{ post.date }}</p>
 
-                <figure>
-                    <img src="{{ post.image }}" alt="{{ post.image_alt }}">
-                </figure>
-
-                <div class="post-content">
-                    {{ post.body | safe }}
-                </div>
-
-                {% if post.tags %}
-                <div class="blog-tags">
-                    {% for tag in post.tags %}
-                    <a href="../tag-{{ tag | lower | replace(' ', '-') }}.html" class="blog-tag">{{ tag }}</a>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                <nav class="post-nav">
-                    {% if post.prev_url %}
-                    <a href="{{ post.prev_url }}" class="prev">← Previous</a>
-                    {% else %}
-                    <span class="prev disabled">← Previous</span>
+                    {% if post.image %}
+                    <figure>
+                        <img src="{{ post.image }}" alt="{{ post.image_alt or 'Blog image' }}">
+                    </figure>
                     {% endif %}
 
-                    {% if post.next_url %}
-                    <a href="{{ post.next_url }}" class="next">Next →</a>
-                    {% else %}
-                    <span class="next disabled">Next →</span>
+                    <div class="post-content">
+                        {{ post.body | safe }}
+                    </div>
+
+                    {% if post.tags %}
+                    <div class="blog-tags">
+                        {% for tag in post.tags %}
+                        <a href="../tag-{{ tag | lower | replace(' ', '-') }}.html" class="blog-tag">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
                     {% endif %}
-                </nav>
 
-            </article>
+                    <nav class="post-nav">
+                        {% if post.prev_url %}
+                        <a href="{{ post.prev_url }}" class="prev">← Previous</a>
+                        {% else %}
+                        <span class="prev disabled">← Previous</span>
+                        {% endif %}
 
-        </div>
+                        {% if post.next_url %}
+                        <a href="{{ post.next_url }}" class="next">Next →</a>
+                        {% else %}
+                        <span class="next disabled">Next →</span>
+                        {% endif %}
+                    </nav>
 
-        <!-- Blog Post Content End -->
+                </article>
 
-
-
-        <div class="footer-container">
-            <div class="footer-text">
-                © <a class="footer-link-text" href="../index.html">Larrie Knights</a>
-                <script type="text/javascript">
-                    document.write(new Date().getFullYear());
-                </script> <span class="phone">(mobile)</span><span class="tablet">(tablet)</span><span
-                    class="desktop">(desktop)</span>
             </div>
-        </div>
+
+            <!-- Blog Post Content End -->
+
+
+
+            <div class="footer-container">
+                <div class="footer-text">
+                    © <a class="footer-link-text" href="../index.html">Larrie Knights</a>
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script> <span class="phone">(mobile)</span><span class="tablet">(tablet)</span><span
+                        class="desktop">(desktop)</span>
+                </div>
+            </div>
         </div>
     </div>
 
