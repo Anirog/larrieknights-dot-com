@@ -3,8 +3,8 @@ title: Twitter (X) Accounts I Like
 date: 2025-08-08
 slug: 2025-08-08-twitter-x-accounts-i-like
 tags: [social]
-image: https://ik.imagekit.io/1wh3oo1zp/larrie-knighs-default_lhSm1y4Pb
-image_alt: Larrie Knights
+image:
+image_alt:
 ---
 
 ## John Shuttleworth
