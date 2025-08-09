@@ -303,3 +303,13 @@ rm images/test-image.jpg
    - Created and merged feature branch locally for these fixes (not pushed to GitHub)
    
 ---
+
+## 9 August 2025
+
+- Improved search functionality:
+  - Excluded common stop words from search queries to reduce irrelevant results.
+  - Prevented empty queries (after stop word removal) from matching all posts.
+  - Added highlight feature for matched search terms in blog titles, excerpts, and tags.
+  - Updated CSS to style highlighted terms for better visibility in results.
+
+---
