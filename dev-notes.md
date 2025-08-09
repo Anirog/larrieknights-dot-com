@@ -313,6 +313,7 @@ rm images/test-image.jpg
   - Prevented empty queries (after stop word removal) from matching all posts.
   - Added highlight feature for matched search terms in blog titles, excerpts, and tags.
   - Updated CSS to style highlighted terms for better visibility in results.
+  - Prevent search results for queries that are only 1 or 2 letters. by adding `if (!filteredQuery.trim() || filteredQuery.length < 3)` to `search.js`.
 
 ### 🎨 UI & Styling
 
