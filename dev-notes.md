@@ -318,5 +318,6 @@ rm images/test-image.jpg
 ### 🎨 UI & Styling
 
 - `H2` tags font size set to `1.25rem` (`20px`).
+*Formula: 1.25 x 16 = 20*
 
 ---
