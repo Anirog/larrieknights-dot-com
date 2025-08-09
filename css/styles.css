@@ -371,6 +371,13 @@ figure img {
   margin-bottom: 48px;
 }
 
+.highlight {
+  background-color: #f0f88a;
+  color: #202124;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
 /* Search Styles End */
 
 /* Blog Index Styles End */

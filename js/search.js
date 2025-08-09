@@ -31,6 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
           .join(' ');
       }
 
+      function highlightText(text, query) {
+        if (!query) return text;
+        // Escape special regex characters in query
+        const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        // Split query into words
+        const words = escaped.split(/\s+/).filter(Boolean);
+        if (words.length === 0) return text;
+        // Build regex for all words
+        const regex = new RegExp(`(${words.join('|')})`, 'gi');
+        return text.replace(regex, '<span class="highlight">$1</span>');
+      }
+
       searchInput.addEventListener('input', function () {
         const query = this.value.toLowerCase();
 
@@ -56,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (results.length > 0) {
             resultsDiv.innerHTML = results.map(post => `
       <div class="card blog-card">
-        <h2 class="blog-title">${post.title}</h2>
+        <h2 class="blog-title">${highlightText(post.title, query)}</h2>
         ${post.image ? `<img src="${post.image}" alt="${post.image_alt || 'Blog image'}" class="card-img">` : ''}
         <div class="card-content">
           <p class="blog-meta">
@@ -64,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
               ${post.tags.map(tag => `<a href="${urlPrefix}/tag-${tag.toLowerCase()}.html" class="blog-tag">${tag}</a>`).join(' ')}
             </span>
           </p>
-          <div class="blog-excerpt">${post.excerpt}</div>
+          <div class="blog-excerpt">${highlightText(post.excerpt, query)}</div>
           <a href="${urlPrefix}${post.url}" class="blog-readmore">Read more →</a>
         </div>
       </div>
