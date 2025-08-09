@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             post.tags.join(',').toLowerCase().includes(filteredQuery)
           );
 
-          if (!filteredQuery.trim()) {
+          if (!filteredQuery.trim() || filteredQuery.length < 3) {
             resultsDiv.innerHTML = '<p style="text-align:center; margin-top:24px; color: #ffffff;">No results found.</p>';
             resultsDiv.classList.add('has-results');
             originalCards.forEach(card => card.style.display = 'none');
