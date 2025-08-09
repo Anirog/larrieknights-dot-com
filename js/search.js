@@ -19,17 +19,39 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.hostname.startsWith('192.168.');
       const urlPrefix = isLocal ? '/docs' : '';
 
+      const stopWords = [
+        "the", "if", "when", "i", "and", "or", "a", "an", "to", "is", "it", "of", "in", "on", "for", "with"
+      ];
+
+      function filterStopWords(query) {
+        return query
+          .toLowerCase()
+          .split(/\s+/)
+          .filter(word => !stopWords.includes(word))
+          .join(' ');
+      }
+
       searchInput.addEventListener('input', function () {
         const query = this.value.toLowerCase();
 
         // input listener start
 
         if (query) {
+          const filteredQuery = filterStopWords(query);
+
           const results = posts.filter(post =>
-            post.title.toLowerCase().includes(query) ||
-            post.excerpt.toLowerCase().includes(query) ||
-            post.tags.join(',').toLowerCase().includes(query)
+            post.title.toLowerCase().includes(filteredQuery) ||
+            post.excerpt.toLowerCase().includes(filteredQuery) ||
+            post.tags.join(',').toLowerCase().includes(filteredQuery)
           );
+
+          if (!filteredQuery.trim()) {
+            resultsDiv.innerHTML = '<p style="text-align:center; margin-top:24px; color: #ffffff;">No results found.</p>';
+            resultsDiv.classList.add('has-results');
+            originalCards.forEach(card => card.style.display = 'none');
+            if (pageContent) pageContent.style.display = 'none';
+            return;
+          }
 
           if (results.length > 0) {
             resultsDiv.innerHTML = results.map(post => `
