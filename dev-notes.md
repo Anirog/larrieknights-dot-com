@@ -306,10 +306,16 @@ rm images/test-image.jpg
 
 ## 9 August 2025
 
+### 🔎 Search Improvements
+
 - Improved search functionality:
   - Excluded common stop words from search queries to reduce irrelevant results.
   - Prevented empty queries (after stop word removal) from matching all posts.
   - Added highlight feature for matched search terms in blog titles, excerpts, and tags.
   - Updated CSS to style highlighted terms for better visibility in results.
+
+### 🎨 UI & Styling
+
+- `H2` tags font size set to `1.25rem` (`20px`).
 
 ---
