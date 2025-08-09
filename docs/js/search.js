@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="card-content">
           <p class="blog-meta">
             <span class="blog-tags">
-              ${post.tags.map(tag => `<a href="${urlPrefix}/tag-${tag.toLowerCase()}.html" class="blog-tag">${tag}</a>`).join(' ')}
+                ${post.tags.map(tag => `<a href="${urlPrefix}/tag-${tag.toLowerCase()}.html" class="blog-tag">${highlightText(tag, query)}</a>`).join(' ')}
             </span>
           </p>
           <div class="blog-excerpt">${highlightText(post.excerpt, query)}</div>
