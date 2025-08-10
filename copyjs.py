@@ -4,6 +4,7 @@ import os
 scripts = [
     ("js/search.js", "docs/js/search.js"),
     ("js/modal.js", "docs/js/modal.js"),
+    ("js/posthog.js", "docs/js/posthog.js"),
 ]
 
 for src, dest in scripts:
