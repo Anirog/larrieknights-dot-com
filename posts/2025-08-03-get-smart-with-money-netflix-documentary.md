@@ -2,7 +2,7 @@
 title: Get Smart With Money - Netflix Documentary
 date: 2025-08-03
 slug: 2025-08-03-get-smart-with-money-netflix-documentary
-tags: [TV]
+tags: [tv]
 image: https://ik.imagekit.io/1wh3oo1zp/Get-Smart-With-Money-netflix-poster_89R3exj20
 image_alt: Likes, Wants, Needs and Loves
 ---
