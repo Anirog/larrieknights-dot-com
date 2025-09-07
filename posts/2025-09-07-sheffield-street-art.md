@@ -6,3 +6,5 @@ tags: [photography]
 image: https://ik.imagekit.io/1wh3oo1zp/sheffield-street-art_nuMdEFxiv
 image_alt: Sheffield Street Art
 ---
+
+![Inside a building with graffiti on the wall](https://ik.imagekit.io/1wh3oo1zp/DSCF0862_ZfSJ9XtNe)
