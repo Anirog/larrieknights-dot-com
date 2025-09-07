@@ -154,9 +154,8 @@ for i, posts_on_page in enumerate(paginated_posts):
     with open(output_path, "w") as f:
         f.write(rendered_html)
 
-from collections import defaultdict
-
 # Group posts by tag
+from collections import defaultdict
 tag_map = defaultdict(list)
 for post in all_posts:
     for tag in post['tags']:
@@ -165,12 +164,32 @@ for post in all_posts:
 # Load the tag page template
 tag_template = env.get_template("blog-tag.html")
 
-# Generate a tag page for each tag
+# Generate paginated tag pages
 for tag, posts in tag_map.items():
     tag_slug = tag.lower().replace(" ", "-")
-    tag_output_path = os.path.join("docs", f"tag-{tag_slug}.html")
-    with open(tag_output_path, "w") as f:
-        f.write(tag_template.render(tag=tag, posts=posts))
+    tag_paginated = chunk_posts(posts, POSTS_PER_PAGE)
+    total_tag_pages = len(tag_paginated)
+
+    for i, posts_on_page in enumerate(tag_paginated):
+        page_num = i + 1
+        is_first = page_num == 1
+        is_last = page_num == total_tag_pages
+
+        # Pagination dict for tag pages
+        pagination = {
+            "current": page_num,
+            "total": total_tag_pages,
+            "prev_page": None if is_first else (
+                f"tag-{tag_slug}.html" if page_num == 2 else f"tag-{tag_slug}-{page_num-1}.html"
+            ),
+            "next_page": None if is_last else f"tag-{tag_slug}-{page_num+1}.html",
+            "page_numbers": list(range(1, total_tag_pages + 1)),
+        }
+
+        output_filename = f"tag-{tag_slug}.html" if is_first else f"tag-{tag_slug}-{page_num}.html"
+        tag_output_path = os.path.join("docs", output_filename)
+        with open(tag_output_path, "w") as f:
+            f.write(tag_template.render(tag=tag, posts=posts_on_page, pagination=pagination))
 
 # Copy the blog-specific About page
 import shutil
