@@ -2,7 +2,7 @@
 title: The Playbook - Doc Rivers A Coach's Rules for Life Netflix Documentary
 date: 2025-09-07
 slug: 2025-09-07-the-playbook-doc-rivers-a-coach-s-rules-for-life-netflix-documentary
-tags: [tv]
+tags: [TV]
 image: https://ik.imagekit.io/1wh3oo1zp/the-playbook_zUZlPR4Fz
 image_alt: The Playbook - Doc Rivers A Coach's Rules for Life Netflix Documentary
 ---
