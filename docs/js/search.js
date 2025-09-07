@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </span>
           </p>
           <div class="blog-excerpt">${highlightText(post.excerpt, query)}</div>
-          <a href="${urlPrefix}${post.url}" class="blog-readmore">Read more →</a>
+          <a href="${urlPrefix}${post.url}" class="blog-readmore">See more →</a>
         </div>
       </div>
     `).join('');

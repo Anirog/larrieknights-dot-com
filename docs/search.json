@@ -11,12 +11,23 @@
   },
   {
     "title": "One Tree Hill",
-    "excerpt": "<p>Start writing your post here......</p>",
+    "excerpt": "",
     "url": "/posts/2025-09-07-one-tree-hill.html",
     "image": "https://ik.imagekit.io/1wh3oo1zp/one-tree-hill_HB4u8Ca2i",
     "image_alt": "A Tree on a Hill",
     "tags": [
       "photography"
+    ]
+  },
+  {
+    "title": "Mermaids Pool Derbyshire",
+    "excerpt": "",
+    "url": "/posts/2025-09-07-mermaids-pool-derbyshire.html",
+    "image": "https://ik.imagekit.io/1wh3oo1zp/mermaids-pool-derbyshire_7DAGk8Ulq",
+    "image_alt": "Mermaids Pool",
+    "tags": [
+      "photography",
+      "travel"
     ]
   },
   {
