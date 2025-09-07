@@ -59,15 +59,20 @@ for filename in os.listdir(POSTS_DIR):
         for a in soup.find_all('a'):
             a.unwrap()
 
-        # Find the first paragraph
-        first_para = soup.find('p')
+        # Find the first non-empty paragraph with text
+        first_para = None
+        for p in soup.find_all('p'):
+            # Remove images from paragraph
+            for img in p.find_all('img'):
+                img.decompose()
+            # Check if paragraph has non-whitespace text
+            if p.get_text(strip=True):
+                first_para = p
+                break
 
         if first_para:
-            # Get the text content and truncate to 30 words
             words = first_para.get_text().strip().split()
             truncated_text = ' '.join(words[:30]) + '...'
-
-            # Create a new <p> with truncated content
             new_para = soup.new_tag("p")
             new_para.string = truncated_text
             excerpt = str(new_para)
