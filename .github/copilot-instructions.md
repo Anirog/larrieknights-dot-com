@@ -1,57 +1,68 @@
-# Project Overview
-Personal website at [larrieknights.com](https://larrieknights.com), hosted on GitHub Pages (`/docs/`).  
-Markdown-based blog with tag pages and pagination. All HTML is static, generated locally using Python + Jinja2.
 
-## Tech Stack Rules
-- Python 3.11+, Jinja2, Markdown, Pillow, piexif, BeautifulSoup4
-- Plain CSS, no SCSS, no Tailwind, no frameworks
-- Vanilla JS only, no bundlers
-- No PHP, Node.js, React/Vue/Svelte, or server-side logic
-- `/docs/` is build output — never edit directly
+# Copilot Instructions for larrieknights-dot-com
+
+## Project Architecture
+
+- **Static site generator** for a personal blog at [larrieknights.com](https://larrieknights.com)
+- **All HTML is generated locally** using Python scripts and Jinja2 templates; no server-side logic
+- **Output is fully static** and deployed via GitHub Pages from the `/docs/` folder
+
+## Tech Stack & Conventions
+
+- **Python 3.11+** (automation/scripts), **Jinja2** (templating), **Markdown** (content), **Pillow/piexif/BeautifulSoup4** (image/content processing)
+- **Plain CSS** only; no preprocessors, frameworks, or build tools
+- **Vanilla JS** only; all scripts in `/js/`, no bundlers or frameworks
+- **No Node.js, PHP, React, Vue, Svelte, or server-side code**
+- **Never edit `/docs/` directly**; always regenerate via scripts
 
 ## Folder Structure
-- `/docs/` → final output for GitHub Pages
-- `/posts/` → `.md` blog posts with frontmatter
-- `/images/` → local assets (optional post images)
-- `/templates/` → Jinja2 templates (`blog-index.html`, `blog-post.html`, `blog-tag.html`, `about-blog.html`)
-- `/css/` → plain CSS
-- `/js/` → `modal.js`, `search.js`
-- Scripts: `new_post.py`, `generate_blog.py`
 
-## Workflow
-1. `python new_post.py` → create post, optional image copy to `/images/`
-2. `python generate_blog.py` → generate blog index, posts, tags, pagination
-3. Preview `/docs/index.html` in Live Server
-4. `git add . && git commit -m "…" && git push`
+- `/posts/` – Markdown blog posts (`YYYY-MM-DD-slug.md`), with required frontmatter (`title`, `date`, `tags`, `excerpt`)
+- `/images/` – Local image assets; images referenced in posts must be present here
+- `/templates/` – Jinja2 HTML templates (`blog-index.html`, `blog-post.html`, etc.)
+- `/css/` – Main stylesheet(s)
+- `/js/` – All JavaScript files (e.g., `modal.js`, `search.js`)
+- `/docs/` – Build output for GitHub Pages (never hand-edit)
 
-## Blog Content Rules
-- Filenames: `YYYY-MM-DD-slug.md`
-- Slug: lowercase, hyphens, ASCII only
-- Required frontmatter:  
-  `title`, `date`, `tags`, `excerpt`  
-  Optional: `image`, `image_alt`, `draft`, `canonical_url`
-- Skip drafts unless `--include-drafts` passed
+## Key Workflows
 
-## Output & Pagination
-- Blog index: `/index.html`, pagination as `/page-2.html`, `/page-3.html`
-- Posts: `/posts/{slug}.html`
-- Tags: `/tag-{tag}.html`, pagination as `/tag-{tag}-2.html`
-- Search index: `/search.json`
+- **Create a new post:**  
+  `python new_post.py` (prompts for metadata, copies image if provided)
+- **Build the site:**  
+  `python generate_blog.py` (generates all HTML, tag pages, pagination, search index)
+- **Preview locally:**  
+  Open `/docs/index.html` in Live Server or browser
+- **Deploy:**  
+  `git add . && git commit -m "…" && git push` (GitHub Pages auto-publishes from `/docs/`)
 
-## HTML/CSS/JS Rules
-- Semantic, minimal HTML
-- Mobile-first CSS, breakpoints: 768px, 1440px
-- Fonts: Space Grotesk, Inter, Courier New (code), Georgia (quotes)
-- Dark theme `#202124`, AA contrast
-- No inline JS — all scripts in `/js/`
-- Modal: focus trap, ESC to close, ARIA attributes
+## Blog & Content Rules
 
-## Image Handling
-- Local images in `/images/` (copied by `new_post.py` if given)
-- Strip EXIF, resize ≤1600px, JPEG ~82 quality
-- Meaningful `alt` text required
+- **Post filenames:** `YYYY-MM-DD-slug.md` (slug: lowercase, hyphens, ASCII)
+- **Drafts:** Mark with `draft: true` in frontmatter; skipped unless `--include-drafts` is passed to generator
+- **Images:**  
+  - Must be in `/images/`  
+  - JPEGs resized ≤1600px, quality ~82, EXIF stripped  
+  - `alt` text required
+- **Output is deterministic:**  
+  - Posts sorted by date (desc), then slug (asc)
+  - Tag and index pages paginated as `/page-2.html`, `/tag-{tag}-2.html`, etc.
 
-## Must-Follow
-- Always keep output deterministic: sort posts by date desc, slug asc
-- No adding new tech outside allowed stack
-- Ask for missing context before big changes
+## HTML/CSS/JS Patterns
+
+- **Semantic, minimal HTML**; mobile-first CSS (breakpoints: 768px, 1440px)
+- **Fonts:** Space Grotesk, Inter, Courier New (code), Georgia (quotes)
+- **Dark theme:** `#202124`, AA contrast
+- **No inline JS**; all scripts loaded from `/js/`
+- **Modal:** Must support focus trap, ESC to close, ARIA attributes
+
+## Integration Points
+
+- **No external APIs or dynamic data sources**
+- **All dependencies managed via `requirements.txt`**; install with `pip install -r requirements.txt`
+
+## Agent Guidance
+
+- **Never add new tech outside the allowed stack**
+- **Ask for missing context before major changes**
+- **Reference `/templates/` for HTML structure and `/css/` for styling conventions**
+- **Scripts (`new_post.py`, `generate_blog.py`) are the only way to update content/output**
