@@ -38,7 +38,6 @@
 ## Blog & Content Rules
 
 - **Post filenames:** `YYYY-MM-DD-slug.md` (slug: lowercase, hyphens, ASCII)
-- **Drafts:** Mark with `draft: true` in frontmatter; skipped unless `--include-drafts` is passed to generator
 - **Images:**  
   - Must be in `/images/`  
   - JPEGs resized ≤1600px, quality ~82, EXIF stripped  
