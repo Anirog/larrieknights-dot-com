@@ -2,8 +2,7 @@
 # Copilot Instructions for larrieknights-dot-com
 
 ## Project Architecture
-
-- **Static site generator** for a personal blog at [larrieknights.com](https://larrieknights.com)
+- **Static site generator** for a personal blog at <https://larrieknights.com>
 - **All HTML is generated locally** using Python scripts and Jinja2 templates; no server-side logic
 - **Output is fully static** and deployed via GitHub Pages from the `/docs/` folder
 
@@ -50,7 +49,7 @@
 
 - **Semantic, minimal HTML**; mobile-first CSS (breakpoints: 768px, 1440px)
 - **Fonts:** Space Grotesk, Inter, Courier New (code), Georgia (quotes)
-- **Dark theme:** `#202124`, AA contrast
+- **Dark theme:** `# 202124`, AA contrast
 - **No inline JS**; all scripts loaded from `/js/`
 - **Modal:** Must support focus trap, ESC to close, ARIA attributes
 
