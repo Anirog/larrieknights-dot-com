@@ -128,3 +128,5 @@ Runs my script instantly from anywhere.
 Making your own `.zshrc` is one of those tiny improvements that quietly pays off every day. It keeps my terminal fast, organised, and a bit more _me_.
 
 If you haven't customised yours yet, start small: one shortcut that saves you time, then build from there.
+
+[GitHub Repo](https://github.com/Anirog/zshrc)
