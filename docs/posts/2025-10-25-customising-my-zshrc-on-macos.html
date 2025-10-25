@@ -92,28 +92,58 @@
 <p><code>.zshrc</code> is a hidden configuration file that loads every time you open a new Terminal window. It's where you add aliases, tweak settings, and customise your prompt.</p>
 <p>Think of it like your Terminal's personal preferences.</p>
 <p>🔧 My current <code>.zshrc</code></p>
-<pre><code>alias ..="cd .."
+<pre><code># 🧭 Navigation
+alias ..="cd .."
 alias desk="cd ~/Desktop"
 alias docs="cd ~/Documents"
 alias dl="cd ~/Downloads"
 
+# ⚙️ Quick utilities
 alias c="clear"
 alias ez="nano ~/.zshrc" # edit zshrc
-alias sz="source ~/.zshrc" # reload zshrc
+alias sz="cp ~/.zshrc ~/Documents/double-struck/.zshrc.backup &amp;&amp; source ~/.zshrc" # backup and reload zshrc
 
+# 🐍 Python
 alias ds="python3 ~/Documents/double-struck/double_struck.py"
 
+# 🧠 Git shortcuts
 alias gs="git status"
 alias ga="git add ."
-alias gc="git commit -m"
 alias gp="git push"
 alias gl="git pull"
 
+# This function processes the input data and returns the result.
+function gc () {
+    if [ -z "$1" ]; then
+        files=$(git status --short | awk '{print $2}' | xargs)
+        if [ -z "$files" ]; then
+        echo "Error: No changes to commit"
+        return 1
+        fi
+        msg="commit: updated files: $files"
+    else
+        msg="commit: $1"
+    fi
+    git add .
+    git commit -m "$msg"
+}
+
+# 💫 Prompt: show current folder and branch (if inside a repo)
 autoload -U colors &amp;&amp; colors
 setopt PROMPT_SUBST PROMPT_CR
 PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2&gt;/dev/null)%f
 › '
 
+# 📂 Get a text file containing all the files in the current folder
+alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' &gt; ~/Desktop/file-list.txt"
+
+# 💫 Prompt: show current folder and branch (if inside a repo)
+autoload -U colors &amp;&amp; colors
+setopt PROMPT_SUBST PROMPT_CR
+PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2&gt;/dev/null)%f
+› '
+
+# 📂 Get a text file containing all the files in the current folder
 alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' &gt; ~/Desktop/file-list.txt"
 </code></pre>
 <h2>✨ Highlights</h2>
@@ -124,8 +154,11 @@ alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' &gt; ~/Desktop/file-list.t
 </ul>
 <p><strong>Quick Git</strong></p>
 <ul>
-<li><code>gs</code> for <code>git status</code></li>
-<li><code>gp</code> to push changes</li>
+<li><code>ga</code> for <code>git add .</code></li>
+<li><code>gc</code> to prompt for a commit message (or auto-generate one) use with:</li>
+</ul>
+<p><code>gc</code> or <code>gc "my message"</code></p>
+<ul>
 <li>Saves loads of typing</li>
 </ul>
 <p><strong>A custom prompt</strong></p>

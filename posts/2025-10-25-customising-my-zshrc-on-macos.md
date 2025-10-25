@@ -24,28 +24,58 @@ Think of it like your Terminal's personal preferences.
 
 🔧 My current `.zshrc`
 
+    # 🧭 Navigation
     alias ..="cd .."
     alias desk="cd ~/Desktop"
     alias docs="cd ~/Documents"
     alias dl="cd ~/Downloads"
 
+    # ⚙️ Quick utilities
     alias c="clear"
     alias ez="nano ~/.zshrc" # edit zshrc
-    alias sz="source ~/.zshrc" # reload zshrc
+    alias sz="cp ~/.zshrc ~/Documents/double-struck/.zshrc.backup && source ~/.zshrc" # backup and reload zshrc
 
+    # 🐍 Python
     alias ds="python3 ~/Documents/double-struck/double_struck.py"
 
+    # 🧠 Git shortcuts
     alias gs="git status"
     alias ga="git add ."
-    alias gc="git commit -m"
     alias gp="git push"
     alias gl="git pull"
 
+    # This function processes the input data and returns the result.
+    function gc () {
+        if [ -z "$1" ]; then
+            files=$(git status --short | awk '{print $2}' | xargs)
+            if [ -z "$files" ]; then
+            echo "Error: No changes to commit"
+            return 1
+            fi
+            msg="commit: updated files: $files"
+        else
+            msg="commit: $1"
+        fi
+        git add .
+        git commit -m "$msg"
+    }
+
+    # 💫 Prompt: show current folder and branch (if inside a repo)
     autoload -U colors && colors
     setopt PROMPT_SUBST PROMPT_CR
     PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2>/dev/null)%f
     › '
 
+    # 📂 Get a text file containing all the files in the current folder
+    alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' > ~/Desktop/file-list.txt"
+
+    # 💫 Prompt: show current folder and branch (if inside a repo)
+    autoload -U colors && colors
+    setopt PROMPT_SUBST PROMPT_CR
+    PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2>/dev/null)%f
+    › '
+
+    # 📂 Get a text file containing all the files in the current folder
     alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' > ~/Desktop/file-list.txt"
 
 
@@ -58,8 +88,11 @@ Think of it like your Terminal's personal preferences.
 
 **Quick Git**
 
-- `gs` for `git status`
-- `gp` to push changes
+- `ga` for `git add .`
+- `gc` to prompt for a commit message (or auto-generate one) use with:
+
+`gc` or `gc "my message"`
+
 - Saves loads of typing
 
 **A custom prompt**
