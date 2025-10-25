@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Larrie Knights – Customising my .zshrc on macOS</title>
+    <meta name="description" content="I’ve been refining my terminal workflow on macOS by adding helpful aliases and a more pleasant prompt. As a bonus, I’ve also set up a small Python ......">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script defer src="/../js/posthog.js"></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Larrie Knights – Customising my .zshrc on macOS">
+    <meta property="og:description" content="I’ve been refining my terminal workflow on macOS by adding helpful aliases and a more pleasant prompt. As a bonus, I’ve also set up a small Python ...">
+    <meta property="og:image" content="https://larrieknights.com/social-preview.jpg">
+    <meta property="og:url" content="https://larrieknights.com/posts/2025-10-25-customising-my-zshrc-on-macos.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Larrie Knights – Customising my .zshrc on macOS">
+    <meta name="twitter:description" content="I’ve been refining my terminal workflow on macOS by adding helpful aliases and a more pleasant prompt. As a bonus, I’ve also set up a small Python ...">
+    <meta name="twitter:image" content="https://larrieknights.com/social-preview.jpg">
+    <meta name="twitter:url" content="https://larrieknights.com/posts/2025-10-25-customising-my-zshrc-on-macos.html">
+
+</head>
+
+<body class="blog-post blog-index">
+
+    <!-- container start -->
+    <div class="container">
+        <div class="header-container">
+            <div class="profile-image-container">
+                <a href="../index.html"><img class="profile-image" src="../images/larrie-knights.png"
+                        alt="Larrie Knights"></a>
+            </div>
+
+            <div class="menu-container">
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span class="hamburger"></span>
+                </label>
+
+                <nav class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About</a>
+                    <a href="#" id="contact-link">Contact</a>
+                </nav>
+
+            </div>
+
+        </div>
+
+        <input type="text" id="searchInput" placeholder="Search blog posts..." class="search-box">
+        <div id="searchResults"></div>
+
+        <!-- Blog Post Content Start -->
+
+        <div id="pageContent">
+
+            <div class="blog-post-container">
+
+                <a href="../index.html" class="back-link">← Back to Blog</a>
+
+                <article class="blog-post">
+                    <h1>Customising my .zshrc on macOS</h1>
+
+                    <p class="post-meta">25 October 2025</p>
+
+                    
+                    <figure>
+                        <img src="https://ik.imagekit.io/1wh3oo1zp/customising-my-zshrc-on-macos_mgdWuCAPK" alt="Customising my .zshrc on macOS">
+                    </figure>
+                    
+
+                    <div class="post-content">
+                        <h1>Customising my .zshrc on macOS</h1>
+<p>I’ve been refining my terminal workflow on macOS by adding helpful aliases and a more pleasant prompt. As a bonus, I’ve also set up a small Python script that I can run from anywhere, which feels like a real enhancement.</p>
+<p>If you'd like to do something similar, here's how I set up my <code>.zshrc</code> configuration.</p>
+<h2>🛠️ What is <code>.zshrc</code>?</h2>
+<p><code>.zshrc</code> is a hidden configuration file that loads every time you open a new Terminal window. It's where you add aliases, tweak settings, and customise your prompt.</p>
+<p>Think of it like your Terminal's personal preferences.</p>
+<p>🔧 My current <code>.zshrc</code></p>
+<pre><code>alias ..="cd .."
+alias desk="cd ~/Desktop"
+alias docs="cd ~/Documents"
+alias dl="cd ~/Downloads"
+
+alias c="clear"
+alias ez="nano ~/.zshrc" # edit zshrc
+alias sz="source ~/.zshrc" # reload zshrc
+
+alias ds="python3 ~/Documents/double-struck/double_struck.py"
+
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias gl="git pull"
+
+autoload -U colors &amp;&amp; colors
+setopt PROMPT_SUBST PROMPT_CR
+PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2&gt;/dev/null)%f
+› '
+
+alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' &gt; ~/Desktop/file-list.txt"
+</code></pre>
+<h2>✨ Highlights</h2>
+<p><strong>Shortcuts to jump around</strong></p>
+<ul>
+<li><code>desk</code> takes me straight to <code>~/Desktop</code></li>
+<li><code>..</code> moves me up one folder</li>
+</ul>
+<p><strong>Quick Git</strong></p>
+<ul>
+<li><code>gs</code> for <code>git status</code></li>
+<li><code>gp</code> to push changes</li>
+<li>Saves loads of typing</li>
+</ul>
+<p><strong>A custom prompt</strong></p>
+<ul>
+<li>Shows the current folder path in cyan</li>
+<li>Shows the Git branch in yellow if I'm inside a repo</li>
+<li>Adds a nice little <code>›</code> prompt symbol</li>
+</ul>
+<p><strong>Simple automation</strong></p>
+<ul>
+<li><code>sl</code> exports a list of files in the current folder to my Desktop</li>
+<li><code>ds</code> runs a Python script I wrote from anywhere</li>
+</ul>
+<h2>✅ How you can set this up</h2>
+<ol>
+<li>Open your <code>.zshrc</code> file</li>
+</ol>
+<p><code>nano ~/.zshrc</code></p>
+<p>If the file doesn't exist, that command will create it.</p>
+<h2>2. Paste in the aliases and prompt from above</h2>
+<p>Add them anywhere, but grouping them like I did keeps things tidy.</p>
+<h2>3. Save and reload</h2>
+<p>Press <code>CTRL + O</code> to save.<br />
+Press <code>CTRL + X</code> to exit Nano.</p>
+<p>Then reload your config:</p>
+<p><code>source ~/.zshrc</code></p>
+<p>(That's what my <code>sz</code> alias does.)</p>
+<h2>🐍 Adding a custom Python script (optional but fun)</h2>
+<p>I made a small Python script called <strong>double_struck.py</strong> and saved it here:</p>
+<p><code>~/Documents/double-struck/double_struck.py</code></p>
+<p>Then I added this alias:</p>
+<p><code>alias ds="python3 ~/Documents/double-struck/double_struck.py"</code></p>
+<p>Now typing:</p>
+<p><code>ds</code></p>
+<p>Runs my script instantly from anywhere.</p>
+<h2>🎯 Final thoughts</h2>
+<p>Making your own <code>.zshrc</code> is one of those tiny improvements that quietly pays off every day. It keeps my terminal fast, organised, and a bit more <em>me</em>.</p>
+<p>If you haven't customised yours yet, start small: one shortcut that saves you time, then build from there.</p>
+                    </div>
+
+                    
+                    <div class="blog-tags">
+                        
+                        <a href="../tag-macos.html" class="blog-tag">macos</a>
+                        
+                        <a href="../tag-coding.html" class="blog-tag">coding</a>
+                        
+                        <a href="../tag-python.html" class="blog-tag">python</a>
+                        
+                        <a href="../tag-terminal.html" class="blog-tag">terminal</a>
+                        
+                        <a href="../tag-productivity.html" class="blog-tag">productivity</a>
+                        
+                    </div>
+                    
+
+                    <nav class="post-nav">
+                        
+                        <span class="prev disabled">← Previous</span>
+                        
+
+                        
+                        <a href="2025-10-16-water-droplets-on-leaf.html" class="next">Next →</a>
+                        
+                    </nav>
+
+                </article>
+
+            </div>
+
+            <!-- Blog Post Content End -->
+
+
+
+            <div class="footer-container">
+                <div class="footer-text">
+                    © <a class="footer-link-text" href="../index.html">Larrie Knights</a>
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script> <span class="phone">(mobile)</span><span class="tablet">(tablet)</span><span
+                        class="desktop">(desktop)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- container end -->
+
+    <!-- Contact Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <!-- 👇 Important: replace this with your own Formsubmit URL -->
+            <!-- You can get one at https://formsubmit.co -->
+            <form action="https://formsubmit.co/93e780d7debce1f7d01007f517f8cc73" method="POST">
+
+                <label for="yourname">Your Name</label>
+                <input type="text" id="yourname" name="yourname" required placeholder="Your Name" />
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="youremail@mail.com" />
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required placeholder="Your message"
+                    style="height: 200px"></textarea>
+
+                <p class="safetext"><i class="ph ph-lock"></i> Your email is safe I NEVER share it with anyone</p>
+
+                <input type="submit" value="Submit" />
+
+                <input type="hidden" name="_next" value="https://larrieknights.com/thanks.html" />
+
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/modal.js"></script>
+    <script src="../js/search.js"></script>
+
+</body>
+
+</html>
