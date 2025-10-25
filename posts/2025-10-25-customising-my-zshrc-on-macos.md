@@ -50,7 +50,6 @@ Think of it like your Terminal's personal preferences.
 
 # 🪜 Optional Extras
 - `sl` exports a list of files in the current folder to my Desktop
-- `ds` runs a Python script I wrote from anywhere
 
 # 🛜 Network
 - `ip` for getting my local IP address
