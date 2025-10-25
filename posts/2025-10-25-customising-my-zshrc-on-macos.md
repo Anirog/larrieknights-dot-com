@@ -28,12 +28,14 @@ Think of it like your Terminal's personal preferences.
 - `desk` takes me straight to `~/Desktop`
 - `docs` takes me straight to `~/Documents`
 - `dl` takes me straight to `~/Downloads`
+- `finder` opens the current folder in Finder
 
 ## ⚙️ Quick utilities
 
 - `c` `clear`
 - `ez` edit .zshrc in nano
 - `sz` Backup and reload `.zshrc`
+- `cpwd` copies the current directory path to clipboard
 
 ## 🐍 Python
 - `ds` runs a Python script I wrote from anywhere
@@ -44,10 +46,14 @@ Think of it like your Terminal's personal preferences.
 - `gp` for `git push`
 - `gl` for `git pull`
 - `gc` for `git commit`
+- `glg` for a nice graphical log of commits
 
 # 🪜 Optional Extras
 - `sl` exports a list of files in the current folder to my Desktop
 - `ds` runs a Python script I wrote from anywhere
+
+# 🛜 Network
+- `ip` for getting my local IP address
 
 # gc - or How I Learned to Stop Worrying and Love Commit Messages
 
