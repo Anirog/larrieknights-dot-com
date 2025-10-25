@@ -91,34 +91,49 @@
 <h2>🛠️ What is <code>.zshrc</code>?</h2>
 <p><code>.zshrc</code> is a hidden configuration file that loads every time you open a new Terminal window. It's where you add aliases, tweak settings, and customise your prompt.</p>
 <p>Think of it like your Terminal's personal preferences.</p>
-<p>🔧 My current <code>.zshrc</code></p>
-<pre><code># 🧭 Navigation
-alias ..="cd .."
-alias desk="cd ~/Desktop"
-alias docs="cd ~/Documents"
-alias dl="cd ~/Downloads"
-
-# ⚙️ Quick utilities
-alias c="clear"
-alias ez="nano ~/.zshrc" # edit zshrc
-alias sz="cp ~/.zshrc ~/Documents/double-struck/.zshrc.backup &amp;&amp; source ~/.zshrc" # backup and reload zshrc
-
-# 🐍 Python
-alias ds="python3 ~/Documents/double-struck/double_struck.py"
-
-# 🧠 Git shortcuts
-alias gs="git status"
-alias ga="git add ."
-alias gp="git push"
-alias gl="git pull"
-
-# This function processes the input data and returns the result.
+<h1>⌨️ Alias (shortcuts)</h1>
+<h2>🧭 Navigation</h2>
+<ul>
+<li><code>..</code> moves me up one folder</li>
+<li><code>desk</code> takes me straight to <code>~/Desktop</code></li>
+<li><code>docs</code> takes me straight to <code>~/Documents</code></li>
+<li><code>dl</code> takes me straight to <code>~/Downloads</code></li>
+</ul>
+<h2>⚙️ Quick utilities</h2>
+<ul>
+<li><code>c</code> <code>clear</code></li>
+<li><code>ez</code> edit .zshrc in nano</li>
+<li><code>sz</code> Backup and reload <code>.zshrc</code></li>
+</ul>
+<h2>🐍 Python</h2>
+<ul>
+<li><code>ds</code> runs a Python script I wrote from anywhere</li>
+</ul>
+<h1>🧠 Git shortcuts</h1>
+<ul>
+<li><code>ga</code> for <code>git add .</code></li>
+<li><code>gs</code> for <code>git status</code></li>
+<li><code>gp</code> for <code>git push</code></li>
+<li><code>gl</code> for <code>git pull</code></li>
+<li><code>gc</code> for <code>git commit</code></li>
+</ul>
+<h1>🪜 Optional Extras</h1>
+<ul>
+<li><code>sl</code> exports a list of files in the current folder to my Desktop</li>
+<li><code>ds</code> runs a Python script I wrote from anywhere</li>
+</ul>
+<h1>gc - or How I Learned to Stop Worrying and Love Commit Messages</h1>
+<p>For the <code>gc</code> alias it got slightly more complicated, as the <code>commit</code>command requires an input for the commit message.</p>
+<p>like this <code>git commit -m "My commit message"</code></p>
+<p>So now when I type <code>gc</code> with no arguments, it automatically generates a commit message based on the changed files. If I provide a message like <code>gc "Fixed bug"</code>, it uses that instead.</p>
+<p>Using this code snippet in my <code>.zshrc</code>:</p>
+<p><code>zsh
 function gc () {
     if [ -z "$1" ]; then
         files=$(git status --short | awk '{print $2}' | xargs)
         if [ -z "$files" ]; then
-        echo "Error: No changes to commit"
-        return 1
+            echo "Error: No changes to commit"
+            return 1
         fi
         msg="commit: updated files: $files"
     else
@@ -126,52 +141,14 @@ function gc () {
     fi
     git add .
     git commit -m "$msg"
-}
-
-# 💫 Prompt: show current folder and branch (if inside a repo)
-autoload -U colors &amp;&amp; colors
-setopt PROMPT_SUBST PROMPT_CR
-PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2&gt;/dev/null)%f
-› '
-
-# 📂 Get a text file containing all the files in the current folder
-alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' &gt; ~/Desktop/file-list.txt"
-
-# 💫 Prompt: show current folder and branch (if inside a repo)
-autoload -U colors &amp;&amp; colors
-setopt PROMPT_SUBST PROMPT_CR
-PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2&gt;/dev/null)%f
-› '
-
-# 📂 Get a text file containing all the files in the current folder
-alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' &gt; ~/Desktop/file-list.txt"
-</code></pre>
-<h2>✨ Highlights</h2>
-<p><strong>Shortcuts to jump around</strong></p>
-<ul>
-<li><code>desk</code> takes me straight to <code>~/Desktop</code></li>
-<li><code>..</code> moves me up one folder</li>
-</ul>
-<p><strong>Quick Git</strong></p>
-<ul>
-<li><code>ga</code> for <code>git add .</code></li>
-<li><code>gc</code> to prompt for a commit message (or auto-generate one) use with:</li>
-</ul>
-<p><code>gc</code> or <code>gc "my message"</code></p>
-<ul>
-<li>Saves loads of typing</li>
-</ul>
+}</code></p>
 <p><strong>A custom prompt</strong></p>
 <ul>
 <li>Shows the current folder path in cyan</li>
 <li>Shows the Git branch in yellow if I'm inside a repo</li>
 <li>Adds a nice little <code>›</code> prompt symbol</li>
 </ul>
-<p><strong>Simple automation</strong></p>
-<ul>
-<li><code>sl</code> exports a list of files in the current folder to my Desktop</li>
-<li><code>ds</code> runs a Python script I wrote from anywhere</li>
-</ul>
+<p><img alt="macOS Terminal" src="https://ik.imagekit.io/1wh3oo1zp/terminal_4TnKveg6O?updatedAt=1761419872138" /></p>
 <h2>✅ How you can set this up</h2>
 <ol>
 <li>Open your <code>.zshrc</code> file</li>

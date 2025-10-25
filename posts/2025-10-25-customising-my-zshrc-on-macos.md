@@ -14,86 +14,67 @@ I’ve been refining my terminal workflow on macOS by adding helpful aliases and
 
 If you'd like to do something similar, here's how I set up my `.zshrc` configuration.
 
-
-
 ## 🛠️ What is `.zshrc`?
 
 `.zshrc` is a hidden configuration file that loads every time you open a new Terminal window. It's where you add aliases, tweak settings, and customise your prompt.
 
 Think of it like your Terminal's personal preferences.
 
-🔧 My current `.zshrc`
+# ⌨️ Alias (shortcuts)
 
-    # 🧭 Navigation
-    alias ..="cd .."
-    alias desk="cd ~/Desktop"
-    alias docs="cd ~/Documents"
-    alias dl="cd ~/Downloads"
+## 🧭 Navigation
 
-    # ⚙️ Quick utilities
-    alias c="clear"
-    alias ez="nano ~/.zshrc" # edit zshrc
-    alias sz="cp ~/.zshrc ~/Documents/double-struck/.zshrc.backup && source ~/.zshrc" # backup and reload zshrc
+- `..` moves me up one folder
+- `desk` takes me straight to `~/Desktop`
+- `docs` takes me straight to `~/Documents`
+- `dl` takes me straight to `~/Downloads`
 
-    # 🐍 Python
-    alias ds="python3 ~/Documents/double-struck/double_struck.py"
+## ⚙️ Quick utilities
 
-    # 🧠 Git shortcuts
-    alias gs="git status"
-    alias ga="git add ."
-    alias gp="git push"
-    alias gl="git pull"
+- `c` `clear`
+- `ez` edit .zshrc in nano
+- `sz` Backup and reload `.zshrc`
 
-    # This function processes the input data and returns the result.
-    function gc () {
-        if [ -z "$1" ]; then
-            files=$(git status --short | awk '{print $2}' | xargs)
-            if [ -z "$files" ]; then
+## 🐍 Python
+- `ds` runs a Python script I wrote from anywhere
+
+# 🧠 Git shortcuts
+- `ga` for `git add .`
+- `gs` for `git status`
+- `gp` for `git push`
+- `gl` for `git pull`
+- `gc` for `git commit`
+
+# 🪜 Optional Extras
+- `sl` exports a list of files in the current folder to my Desktop
+- `ds` runs a Python script I wrote from anywhere
+
+# gc - or How I Learned to Stop Worrying and Love Commit Messages
+
+For the `gc` alias it got slightly more complicated, as the `commit`command requires an input for the commit message.
+
+like this `git commit -m "My commit message"`
+
+So now when I type `gc` with no arguments, it automatically generates a commit message based on the changed files. If I provide a message like `gc "Fixed bug"`, it uses that instead.
+
+Using this code snippet in my `.zshrc`:
+
+```zsh
+function gc () {
+    if [ -z "$1" ]; then
+        files=$(git status --short | awk '{print $2}' | xargs)
+        if [ -z "$files" ]; then
             echo "Error: No changes to commit"
             return 1
-            fi
-            msg="commit: updated files: $files"
-        else
-            msg="commit: $1"
         fi
-        git add .
-        git commit -m "$msg"
-    }
-
-    # 💫 Prompt: show current folder and branch (if inside a repo)
-    autoload -U colors && colors
-    setopt PROMPT_SUBST PROMPT_CR
-    PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2>/dev/null)%f
-    › '
-
-    # 📂 Get a text file containing all the files in the current folder
-    alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' > ~/Desktop/file-list.txt"
-
-    # 💫 Prompt: show current folder and branch (if inside a repo)
-    autoload -U colors && colors
-    setopt PROMPT_SUBST PROMPT_CR
-    PROMPT='%F{cyan}%~%f %F{yellow}$(git branch --show-current 2>/dev/null)%f
-    › '
-
-    # 📂 Get a text file containing all the files in the current folder
-    alias sl="find . -type f -maxdepth 1 | sed 's|^\./||' > ~/Desktop/file-list.txt"
-
-
-## ✨ Highlights
-
-**Shortcuts to jump around**
-
-- `desk` takes me straight to `~/Desktop`
-- `..` moves me up one folder
-
-**Quick Git**
-
-- `ga` for `git add .`
-- `gc` to prompt for a commit message (or auto-generate one) use with:
-
-`gc` or `gc "my message"`
-
-- Saves loads of typing
+        msg="commit: updated files: $files"
+    else
+        msg="commit: $1"
+    fi
+    git add .
+    git commit -m "$msg"
+}
+```
 
 **A custom prompt**
 
@@ -101,10 +82,7 @@ Think of it like your Terminal's personal preferences.
 - Shows the Git branch in yellow if I'm inside a repo
 - Adds a nice little `›` prompt symbol
 
-**Simple automation**
-
-- `sl` exports a list of files in the current folder to my Desktop
-- `ds` runs a Python script I wrote from anywhere
+![macOS Terminal](https://ik.imagekit.io/1wh3oo1zp/terminal_4TnKveg6O?updatedAt=1761419872138)
 
 ## ✅ How you can set this up
 
