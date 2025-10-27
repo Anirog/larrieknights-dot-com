@@ -24,93 +24,57 @@ Think of it like your Terminal's personal preferences.
 
 ## 🧭 Navigation
 
-`..`  
+<kbd>..</kbd> - Moves up one folder
 
-Moves up one folder
+<kbd>desk</kbd> - Go to `Desktop`
 
-`desk`  
+<kbd>docs</kbd> - Go to `Documents`
 
-Go to Desktop
+<kbd>dl</kbd> - Go to `Downloads`
 
-`docs`  
-
-Go to Documents
-
-`dl`  
-
-Go to Downloads
-
-`finder`  
-
-Open current folder in Finder
+<kbd>finder</kbd> - Open current folder in Finder
 
 ## ⚙️ Quick utilities
 
-`c`  
+<kbd>c</kbd> - Clear the terminal
 
-Clear the terminal
+<kbd>ez</kbd> - Open `.zshrc` in nano for editing
 
-`ez`  
+<kbd>sz</kbd> - Backup `.zshrc` and reload it
 
-Open `.zshrc` in nano for editing
-
-`sz`  
-
-Backup `.zshrc` and reload it
-
-`cpwd`  
-
-Copy current directory path to clipboard
+<kbd>cpwd</kbd> - Copy current directory path to clipboard
 
 ## 🐍 Python
 
-`ds`  
+<kbd>ds</kbd> - Run `double_struck.py`
 
-Run `double_struck.py`
-
-`zen`  
-
-Run `zen_quote.py`
+<kbd>zen</kbd> - Run `zen_quote.py`
 
 ## 🧠 Git shortcuts
 
-`gs`  
+<kbd>gc</kbd> - Git commit with auto-generated message
 
-Git status
+<kbd>gp</kbd> - Git push
 
-`ga`  
+<kbd>gs</kbd> - Git status
 
-Git add all changes
+<kbd>ga</kbd> - Git add all changes
 
-`gp`  
+<kbd>gl</kbd> - Git pull
 
-Git push
-
-`gl`  
-
-Git pull
-
-`glg`  
-
-View a compact graphical git log
+<kbd>glg</kbd> - View a compact graphical git log
 
 ## 📂 File listing
 
-`sl`  
-
-Save a file list of the current folder to your Desktop
+<kbd>sl</kbd> - Save a file list of the current folder to your Desktop
 
 ## 🛜 Network
 
-`ip`  
-
-Show local IP address
+<kbd>ip</kbd> - Show local IP address
 
 ## 🎲 Modifiers
 
-`ls`  
-
-Show files with type indicators
+<kbd>ls</kbd> -Show files with type indicators
 
 # gc - or How I Learned to Stop Worrying and Love Commit Messages
 
