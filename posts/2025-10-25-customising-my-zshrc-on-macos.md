@@ -20,39 +20,97 @@ If you'd like to do something similar, here's how I set up my `.zshrc` configura
 
 Think of it like your Terminal's personal preferences.
 
-# ⌨️ Alias (shortcuts)
+# 💻 Terminal (alias) commands
 
 ## 🧭 Navigation
 
-- `..` moves me up one folder
-- `desk` takes me straight to `~/Desktop`
-- `docs` takes me straight to `~/Documents`
-- `dl` takes me straight to `~/Downloads`
-- `finder` opens the current folder in Finder
+`..`  
+
+Moves up one folder
+
+`desk`  
+
+Go to Desktop
+
+`docs`  
+
+Go to Documents
+
+`dl`  
+
+Go to Downloads
+
+`finder`  
+
+Open current folder in Finder
 
 ## ⚙️ Quick utilities
 
-- `c` `clear`
-- `ez` edit .zshrc in nano
-- `sz` Backup and reload `.zshrc`
-- `cpwd` copies the current directory path to clipboard
+`c`  
+
+Clear the terminal
+
+`ez`  
+
+Open `.zshrc` in nano for editing
+
+`sz`  
+
+Backup `.zshrc` and reload it
+
+`cpwd`  
+
+Copy current directory path to clipboard
 
 ## 🐍 Python
-- `ds` runs a Python script I wrote from anywhere
 
-# 🧠 Git shortcuts
-- `ga` for `git add .`
-- `gs` for `git status`
-- `gp` for `git push`
-- `gl` for `git pull`
-- `gc` for `git commit`
-- `glg` for a nice graphical log of commits
+`ds`  
 
-# 🪜 Optional Extras
-- `sl` exports a list of files in the current folder to my Desktop
+Run `double_struck.py`
 
-# 🛜 Network
-- `ip` for getting my local IP address
+`zen`  
+
+Run `zen_quote.py`
+
+## 🧠 Git shortcuts
+
+`gs`  
+
+Git status
+
+`ga`  
+
+Git add all changes
+
+`gp`  
+
+Git push
+
+`gl`  
+
+Git pull
+
+`glg`  
+
+View a compact graphical git log
+
+## 📂 File listing
+
+`sl`  
+
+Save a file list of the current folder to your Desktop
+
+## 🛜 Network
+
+`ip`  
+
+Show local IP address
+
+## 🎲 Modifiers
+
+`ls`  
+
+Show files with type indicators
 
 # gc - or How I Learned to Stop Worrying and Love Commit Messages
 
