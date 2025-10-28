@@ -1,5 +1,16 @@
 [
   {
+    "title": "Remove Blue Dot Messages GitHub Fix",
+    "excerpt": "<p>When I went to GitHub.com, a nice little blue dot would appear next to the Messages icon whenever there was something new — a notification, a mention, or anything that...</p>",
+    "url": "/posts/2025-10-28-remove-blue-dot-messages-github-fix.html",
+    "image": "https://ik.imagekit.io/1wh3oo1zp/Remove-Blue-Dot-Messages-GitHub-Fix_XtKuVGmWR",
+    "image_alt": "Remove Blue Dot Messages GitHub Fix",
+    "tags": [
+      "tech",
+      "github"
+    ]
+  },
+  {
     "title": "Customising my .zshrc on macOS",
     "excerpt": "<p>I’ve been refining my terminal workflow on macOS by adding helpful aliases and a more pleasant prompt. As a bonus, I’ve also set up a small Python script that I...</p>",
     "url": "/posts/2025-10-25-customising-my-zshrc-on-macos.html",

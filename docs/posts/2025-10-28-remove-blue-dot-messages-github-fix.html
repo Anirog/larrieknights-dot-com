@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Larrie Knights – Remove Blue Dot Messages GitHub Fix</title>
+    <meta name="description" content="When I went to GitHub.com, a nice little blue dot would appear next to the Messages icon whenever there was something new — a notification, a menti......">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script defer src="/../js/posthog.js"></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Larrie Knights – Remove Blue Dot Messages GitHub Fix">
+    <meta property="og:description" content="When I went to GitHub.com, a nice little blue dot would appear next to the Messages icon whenever there was something new — a notification, a menti...">
+    <meta property="og:image" content="https://larrieknights.com/social-preview.jpg">
+    <meta property="og:url" content="https://larrieknights.com/posts/2025-10-28-remove-blue-dot-messages-github-fix.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Larrie Knights – Remove Blue Dot Messages GitHub Fix">
+    <meta name="twitter:description" content="When I went to GitHub.com, a nice little blue dot would appear next to the Messages icon whenever there was something new — a notification, a menti...">
+    <meta name="twitter:image" content="https://larrieknights.com/social-preview.jpg">
+    <meta name="twitter:url" content="https://larrieknights.com/posts/2025-10-28-remove-blue-dot-messages-github-fix.html">
+
+</head>
+
+<body class="blog-post blog-index">
+
+    <!-- container start -->
+    <div class="container">
+        <div class="header-container">
+            <div class="profile-image-container">
+                <a href="../index.html"><img class="profile-image" src="../images/larrie-knights.png"
+                        alt="Larrie Knights"></a>
+            </div>
+
+            <div class="menu-container">
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span class="hamburger"></span>
+                </label>
+
+                <nav class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About</a>
+                    <a href="#" id="contact-link">Contact</a>
+                </nav>
+
+            </div>
+
+        </div>
+
+        <input type="text" id="searchInput" placeholder="Search blog posts..." class="search-box">
+        <div id="searchResults"></div>
+
+        <!-- Blog Post Content Start -->
+
+        <div id="pageContent">
+
+            <div class="blog-post-container">
+
+                <a href="../index.html" class="back-link">← Back to Blog</a>
+
+                <article class="blog-post">
+                    <h1>Remove Blue Dot Messages GitHub Fix</h1>
+
+                    <p class="post-meta">28 October 2025</p>
+
+                    
+                    <figure>
+                        <img src="https://ik.imagekit.io/1wh3oo1zp/Remove-Blue-Dot-Messages-GitHub-Fix_XtKuVGmWR" alt="Remove Blue Dot Messages GitHub Fix">
+                    </figure>
+                    
+
+                    <div class="post-content">
+                        <p>When I went to GitHub.com, a nice little blue dot would appear next to the <strong>Messages</strong> icon whenever there was something new — a notification, a mention, or anything that needed my attention.</p>
+<p>But for a while, that blue dot got stuck.  </p>
+<p>Even after checking every notification and inbox tab, it just wouldn’t go away.  </p>
+<p>After some searching, I found <a href="https://stackoverflow.com/questions/78140763/github-inbox-empty-but-still-showing-1-and-blue-dot">this Stack Overflow thread</a>, which linked to an official GitHub support reply that explained the cause:</p>
+<blockquote>
+<p>The issue you are experiencing is a known bug that often occurs when you receive notifications from accounts that have been suspended or marked as spammy. Our engineering team is aware of this issue and is actively working to address it.</p>
+</blockquote>
+<p>The workaround they suggested finally fixed it — by marking all notifications as read using the GitHub Activity API.</p>
+<p>Run this command in Terminal, replacing <code>$TOKEN</code> with your personal access token:</p>
+<p><code>bash
+curl -X PUT -H "Authorization: token $TOKEN" https://api.github.com/notifications</code></p>
+<p>After running that, the blue dot disappeared instantly.  </p>
+<p>It was such a small thing, but weirdly satisfying.</p>
+<hr />
+<h3>How to get a GitHub token with <strong>notifications</strong> scope</h3>
+<p>Here's the quick way:</p>
+<ol>
+<li>Go to <strong>GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)</strong>.</li>
+<li>Click <strong>Generate new token (classic)</strong>.</li>
+<li>Give it a name, set an expiry date, and check the <strong>notifications</strong> scope (plus anything else you actually need).</li>
+<li>Click <strong>Generate token</strong> and copy it -- you'll only see it once.</li>
+</ol>
+<p>That's it. Paste it into the command above and watch the blue dot vanish.</p>
+                    </div>
+
+                    
+                    <div class="blog-tags">
+                        
+                        <a href="../tag-tech.html" class="blog-tag">tech</a>
+                        
+                        <a href="../tag-github.html" class="blog-tag">github</a>
+                        
+                    </div>
+                    
+
+                    <nav class="post-nav">
+                        
+                        <span class="prev disabled">← Previous</span>
+                        
+
+                        
+                        <a href="2025-10-25-customising-my-zshrc-on-macos.html" class="next">Next →</a>
+                        
+                    </nav>
+
+                </article>
+
+            </div>
+
+            <!-- Blog Post Content End -->
+
+
+
+            <div class="footer-container">
+                <div class="footer-text">
+                    © <a class="footer-link-text" href="../index.html">Larrie Knights</a>
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script> <span class="phone">(mobile)</span><span class="tablet">(tablet)</span><span
+                        class="desktop">(desktop)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- container end -->
+
+    <!-- Contact Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <!-- 👇 Important: replace this with your own Formsubmit URL -->
+            <!-- You can get one at https://formsubmit.co -->
+            <form action="https://formsubmit.co/93e780d7debce1f7d01007f517f8cc73" method="POST">
+
+                <label for="yourname">Your Name</label>
+                <input type="text" id="yourname" name="yourname" required placeholder="Your Name" />
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="youremail@mail.com" />
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required placeholder="Your message"
+                    style="height: 200px"></textarea>
+
+                <p class="safetext"><i class="ph ph-lock"></i> Your email is safe I NEVER share it with anyone</p>
+
+                <input type="submit" value="Submit" />
+
+                <input type="hidden" name="_next" value="https://larrieknights.com/thanks.html" />
+
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/modal.js"></script>
+    <script src="../js/search.js"></script>
+
+</body>
+
+</html>
