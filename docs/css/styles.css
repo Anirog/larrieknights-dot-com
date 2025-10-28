@@ -134,6 +134,18 @@ figure img {
   margin-bottom: 18px;
 }
 
+/* Horizontal Rule Styling Start */
+
+.post-content hr {
+  border: none;
+  height: 1px;
+  background-color: #444746;
+  margin: 2.5rem 0;
+  opacity: 0.8;
+}
+
+/* Horizontal Rule Styling End */
+
 /* Code Styling Start */
 
 .post-content code {
