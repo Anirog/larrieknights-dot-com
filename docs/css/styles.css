@@ -6,15 +6,14 @@
 
 /* Blog Post Styles Start */
 
-.post-content a {
-  color: #8ab4f8;
-  text-decoration: none;
-  transition: all 150ms ease-in-out;
-}
+/* Headings Start */
 
-.post-content a:hover {
-  text-decoration: none;
-  color: #cccccc;
+.blog-post h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 18px;
 }
 
 .post-content h2 {
@@ -24,6 +23,28 @@
   color: #e8eaed;
   /* match your site's light text */
   padding-bottom: 0.3rem;
+}
+
+.post-content h3 {
+  font-size: 1.125rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #e8eaed;
+  /* match your site's light text */
+  padding-bottom: 0.25rem;
+}
+
+/* Headings End */
+
+.post-content a {
+  color: #8ab4f8;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+.post-content a:hover {
+  text-decoration: none;
+  color: #cccccc;
 }
 
 .post-content ol {
@@ -85,14 +106,6 @@
 .back-link,
 .post-nav a {
   transition: all 150ms ease-in-out;
-}
-
-.blog-post h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 18px;
 }
 
 .post-meta {
