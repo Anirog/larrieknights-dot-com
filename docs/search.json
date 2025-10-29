@@ -11,20 +11,6 @@
     ]
   },
   {
-    "title": "Customising my .zshrc on macOS",
-    "excerpt": "<p>I’ve been refining my terminal workflow on macOS by adding helpful aliases and a more pleasant prompt. As a bonus, I’ve also set up a small Python script that I...</p>",
-    "url": "/posts/2025-10-25-customising-my-zshrc-on-macos.html",
-    "image": "https://ik.imagekit.io/1wh3oo1zp/customising-my-zshrc-on-macos_mgdWuCAPK",
-    "image_alt": "Customising my .zshrc on macOS",
-    "tags": [
-      "macos",
-      "coding",
-      "python",
-      "terminal",
-      "productivity"
-    ]
-  },
-  {
     "title": "Water Droplets on Leaf",
     "excerpt": "",
     "url": "/posts/2025-10-16-water-droplets-on-leaf.html",
