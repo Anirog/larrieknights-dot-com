@@ -1,6 +1,6 @@
 # Personal Website Project
 
-This project powers my personal website [larrieknights.com](https://larrieknights.com) including:
+This project generates my personal website [larrieknights.com](https://larrieknights.com) including:
 
 - A markdown-based blog with tags, pagination and search
 - A static site generator that converts markdown to HTML
