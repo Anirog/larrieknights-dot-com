@@ -11,7 +11,7 @@
 - **Python 3.11+** (automation/scripts), **Jinja2** (templating), **Markdown** (content), **Pillow/piexif/BeautifulSoup4** (image/content processing)
 - **Plain CSS** only; no preprocessors, frameworks, or build tools
 - **Vanilla JS** only; all scripts in `/js/`, no bundlers or frameworks
-- **No Node.js, PHP, React, Vue, Svelte, or server-side code**
+- **No PHP, React, Vue, Svelte, or server-side code**
 - **Never edit `/docs/` directly**; always regenerate via scripts
 
 ## Folder Structure
