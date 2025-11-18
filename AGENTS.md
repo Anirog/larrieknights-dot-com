@@ -12,12 +12,7 @@
 ## Code and structure
 - HTML remains simple and semantic.
 - CSS lives in:
-  - `main.css` which uses `@import`
-  - `layout.css`
-  - `typography.css`
-  - `photo.css`
-  - `blog.css`
-  - `components.css`
+  - `styles.css` for global styles
 - Maintain a **calm, minimal, typography-focused** aesthetic.
 - Avoid large visual changes unless asked for them.
 
