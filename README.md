@@ -1,4 +1,4 @@
-# Personal Website Project
+# 🏠 Personal Website Project
 
 This project generates my personal website [larrieknights.com](https://larrieknights.com) including:
 
@@ -8,12 +8,12 @@ This project generates my personal website [larrieknights.com](https://larriekni
 - Automation scripts written in Python
 - Static site output for GitHub Pages deployment
 
-## Key Scripts
+## 🐍 Key Scripts
 
 - `new_post.py` – Creates a new markdown file with frontmatter for blog
 - `generate_blog.py` – Converts markdown blog posts to HTML using Jinja
 
-## Notes
+## 📝 Notes
 
 - Uses plain CSS only (no SCSS, no build tools)
 - Hosted on GitHub Pages via the `docs/` folder
