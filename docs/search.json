@@ -1,5 +1,15 @@
 [
   {
+    "title": "Tools",
+    "excerpt": "<p>I enjoy making things and here are some web apps I’ve created....</p>",
+    "url": "/posts/2025-11-21-tools.html",
+    "image": null,
+    "image_alt": null,
+    "tags": [
+      "tools"
+    ]
+  },
+  {
     "title": "Travels With Mishell",
     "excerpt": "",
     "url": "/posts/2025-11-17-travels-with-mishell.html",
