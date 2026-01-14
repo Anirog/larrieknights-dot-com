@@ -70,9 +70,6 @@ I developed the agent using VS Code and Copilot. I used the Claude Sonnet 4.5 mo
 - Extend to support responsive breakpoints and layout modes
 - Create component library generator from Sketch symbols
 
+---
 
-
-
-
-
-
+[GitHub](https://github.com/Anirog/sketch-design-to-code-agent)
