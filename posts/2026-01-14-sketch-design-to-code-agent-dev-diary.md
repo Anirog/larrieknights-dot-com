@@ -6,7 +6,7 @@ date: 2026-01-14
 
 slug: 2026-01-14-sketch-design-to-code-agent-dev-diary
 
-tags: [coding, dev-diary, html, devnotes, status::in-progress, ui, webdesign, ai, css, sketch, design, copilot, vscode]
+tags: [dev-diary, ai]
 
 image: 
 
@@ -65,10 +65,10 @@ I developed the agent using VS Code and Copilot. I used the Claude Sonnet 4.5 mo
 
 ## Next Steps
 
-- [ ] Test with additional components (inputs, cards, modals)
-- [ ] Build design tokens extraction from Sketch color/text styles
-- [ ] Extend to support responsive breakpoints and layout modes
-- [ ] Create component library generator from Sketch symbols
+- Test with additional components (inputs, cards, modals)
+- Build design tokens extraction from Sketch color/text styles
+- Extend to support responsive breakpoints and layout modes
+- Create component library generator from Sketch symbols
 
 
 
