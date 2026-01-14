@@ -1,5 +1,27 @@
 [
   {
+    "title": "🔶 Sketch Design to Code Agent - Dev Diary",
+    "excerpt": "<p>This blog post documents creating a custom AI agent for use with the Sketch MCP server. The agent’s purpose is to transform Sketch designs into production-ready HTML and CSS....</p>",
+    "url": "/posts/2026-01-14-sketch-design-to-code-agent-dev-diary.html",
+    "image": null,
+    "image_alt": null,
+    "tags": [
+      "coding",
+      "dev-diary",
+      "html",
+      "devnotes",
+      "status::in-progress",
+      "ui",
+      "webdesign",
+      "ai",
+      "css",
+      "sketch",
+      "design",
+      "copilot",
+      "vscode"
+    ]
+  },
+  {
     "title": "Books I Enjoyed in 2025",
     "excerpt": "<p>See on Goodreads...</p>",
     "url": "/posts/2025-12-29-books-i-enjoyed-in-2025.html",
