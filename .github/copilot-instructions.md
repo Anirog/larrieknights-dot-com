@@ -1,4 +1,3 @@
-
 # Copilot Instructions for larrieknights-dot-com
 
 ## Project Architecture
