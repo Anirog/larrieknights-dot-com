@@ -14,8 +14,6 @@ image_alt:
 
 ---
 
-
-
 This blog post documents creating a custom AI agent for use with the Sketch MCP server. The agent’s purpose is to transform Sketch designs into production-ready HTML and CSS.
 
 I developed the agent using VS Code and Copilot. I used the Claude Sonnet 4.5 model in Copilot to create the agent and iteratively refine it.
@@ -26,16 +24,15 @@ I developed the agent using VS Code and Copilot. I used the Claude Sonnet 4.5 mo
 - Enforces strict design fidelity with real data
 - Implemented BEM methodology for class naming
 - Sketch API data extraction
-- BEM methodology CSS generation
 - MCP server integration
 - Respect null values principle
 
 ## Tue, 6 Jan 2026
 
-- ﻿Improved Sketch Design to Code agent capabilities
+- Improved Sketch Design to Code agent capabilities
 - Fixed font weight extraction for accurate CSS
-- ﻿﻿Correctly extracted text colors from layers
-- ﻿﻿Included accurate line-height and letter-spacing values
+- Correctly extracted text colors from layers
+- Included accurate line-height and letter-spacing values
 - Verified fixes against actual Sketch layers
 
 ## Sat, 10 Jan 2026
@@ -48,9 +45,9 @@ I developed the agent using VS Code and Copilot. I used the Claude Sonnet 4.5 mo
 
 ## Tue, 13 Jan 2026
 
-- ﻿﻿Enhanced gradient fill extraction
-- ﻿﻿Added inner shadows support
-- ﻿﻿Category-preserving CSS mappings
+- Enhanced gradient fill extraction
+- Added inner shadows support
+- Category-preserving CSS mappings
 - Tested on round liquid glass button
 - Ensured perfect fidelity
 
@@ -59,7 +56,7 @@ I developed the agent using VS Code and Copilot. I used the Claude Sonnet 4.5 mo
 
 - Added guidance for simplifying gradient borders
 - Ensured vendor prefixes for maximum browser compatibility
-- ﻿﻿Emphasised visual fidelity over technical accuracy
+- Emphasised visual fidelity over technical accuracy
 
 ---
 
