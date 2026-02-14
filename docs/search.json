@@ -21,16 +21,6 @@
     ]
   },
   {
-    "title": "of my former self",
-    "excerpt": "",
-    "url": "/posts/2025-12-25-shadow.html",
-    "image": "https://ik.imagekit.io/1wh3oo1zp/DSC07852_Wc0p8O56s",
-    "image_alt": "Shadow on wall",
-    "tags": [
-      "photography"
-    ]
-  },
-  {
     "title": "Red Berries",
     "excerpt": "",
     "url": "/posts/2025-12-03-red-berries.html",
@@ -154,26 +144,6 @@
     ]
   },
   {
-    "title": "The Playbook - Doc Rivers A Coach's Rules for Life Netflix Documentary",
-    "excerpt": "<p>The dictionary definition of Ubuntu is:...</p>",
-    "url": "/posts/2025-09-07-the-playbook-doc-rivers-a-coach-s-rules-for-life-netflix-documentary.html",
-    "image": "https://ik.imagekit.io/1wh3oo1zp/the-playbook_zUZlPR4Fz",
-    "image_alt": "The Playbook - Doc Rivers A Coach's Rules for Life Netflix Documentary",
-    "tags": [
-      "tv"
-    ]
-  },
-  {
-    "title": "One Tree Hill",
-    "excerpt": "",
-    "url": "/posts/2025-09-07-one-tree-hill.html",
-    "image": "https://ik.imagekit.io/1wh3oo1zp/one-tree-hill_HB4u8Ca2i",
-    "image_alt": "A Tree on a Hill",
-    "tags": [
-      "photography"
-    ]
-  },
-  {
     "title": "Sheffield Street Art",
     "excerpt": "",
     "url": "/posts/2025-09-07-sheffield-street-art.html",
@@ -181,6 +151,16 @@
     "image_alt": "Sheffield Street Art",
     "tags": [
       "photography"
+    ]
+  },
+  {
+    "title": "The Playbook - Doc Rivers A Coach's Rules for Life Netflix Documentary",
+    "excerpt": "<p>The dictionary definition of Ubuntu is:...</p>",
+    "url": "/posts/2025-09-07-the-playbook-doc-rivers-a-coach-s-rules-for-life-netflix-documentary.html",
+    "image": "https://ik.imagekit.io/1wh3oo1zp/the-playbook_zUZlPR4Fz",
+    "image_alt": "The Playbook - Doc Rivers A Coach's Rules for Life Netflix Documentary",
+    "tags": [
+      "tv"
     ]
   },
   {
@@ -192,6 +172,16 @@
     "tags": [
       "photography",
       "travel"
+    ]
+  },
+  {
+    "title": "One Tree Hill",
+    "excerpt": "",
+    "url": "/posts/2025-09-07-one-tree-hill.html",
+    "image": "https://ik.imagekit.io/1wh3oo1zp/one-tree-hill_HB4u8Ca2i",
+    "image_alt": "A Tree on a Hill",
+    "tags": [
+      "photography"
     ]
   },
   {
